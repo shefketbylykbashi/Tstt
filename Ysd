@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        var solution491 = new Solution491();
+        int[] nums = { 4, 6, 7, 7 };
+        var ans = solution491.FindSubsequences(nums);
+        foreach (var seq in ans)
+            Console.WriteLine($"[{string.Join(",", seq)}]");
+
+
+        var solution828 = new Solution828();
+        Console.WriteLine(solution828.UniqueLetterString("ABC")); 
+        Console.WriteLine(solution828.UniqueLetterString("ABA"));
+        Console.WriteLine(solution828.UniqueLetterString("LEETCODE"));
+    }
+}
