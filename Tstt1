@@ -1,0 +1,33 @@
+using System;
+
+public class Solution491
+{
+    public IList<IList<int>> FindSubsequences(int[] nums)
+    {
+        var result = new List<IList<int>>();
+        var path = new List<int>();
+        Dfs(0);
+        return result;
+
+        void Dfs(int start)
+        {
+            if (path.Count >= 2)
+                result.Add(new List<int>(path));
+
+            var used = new HashSet<int>();
+
+            for (int i = start; i < nums.Length; i++)
+            {
+                if (!used.Add(nums[i])) continue;
+
+
+                if (path.Count == 0 || nums[i] >= path[path.Count - 1])
+                {
+                    path.Add(nums[i]);
+                    Dfs(i + 1);
+                    path.RemoveAt(path.Count - 1);
+                }
+            }
+        }
+    }
+}
