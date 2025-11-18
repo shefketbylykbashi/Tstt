@@ -1,0 +1,77 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+package com.example;
+
+import java.security.SecureRandom;
+import org.bouncycastle.crypto.AsymmetricCipherKeyPair;
+import org.bouncycastle.crypto.SecretWithEncapsulation;
+import org.bouncycastle.pqc.crypto.frodo.FrodoKEMExtractor;
+import org.bouncycastle.pqc.crypto.frodo.FrodoKEMGenerator;
+import org.bouncycastle.pqc.crypto.frodo.FrodoKeyGenerationParameters;
+import org.bouncycastle.pqc.crypto.frodo.FrodoKeyPairGenerator;
+import org.bouncycastle.pqc.crypto.frodo.FrodoParameters;
+import org.bouncycastle.pqc.crypto.frodo.FrodoPrivateKeyParameters;
+import org.bouncycastle.pqc.crypto.frodo.FrodoPublicKeyParameters;
+import org.bouncycastle.util.encoders.Hex;
+
+public class FrodoKEM {
+   public FrodoKEM() {
+   }
+
+   public void runDemo() {
+      try {
+         FrodoParameters var1 = FrodoParameters.frodokem640aes;
+         System.out.println("=== FrodoKEM Demonstration ===");
+         System.out.println("Using parameter set: " + var1.getName());
+         long var2 = System.nanoTime();
+         FrodoKeyPairGenerator var4 = new FrodoKeyPairGenerator();
+         var4.init(new FrodoKeyGenerationParameters(new SecureRandom(), var1));
+         AsymmetricCipherKeyPair var5 = var4.generateKeyPair();
+         long var6 = System.nanoTime();
+         FrodoPublicKeyParameters var8 = (FrodoPublicKeyParameters)var5.getPublic();
+         FrodoPrivateKeyParameters var9 = (FrodoPrivateKeyParameters)var5.getPrivate();
+         System.out.printf("Key generation took: %d ms%n", (var6 - var2) / 1000000L);
+         System.out.println("Public key length: " + var8.getEncoded().length + " bytes");
+         System.out.println("Private key length: " + var9.getEncoded().length + " bytes");
+         FileUtils.saveBytes("output/public.key", var8.getEncoded());
+         FileUtils.saveBytes("output/private.key", var9.getEncoded());
+         long var10 = System.nanoTime();
+         FrodoKEMGenerator var12 = new FrodoKEMGenerator(new SecureRandom());
+         SecretWithEncapsulation var13 = var12.generateEncapsulated(var8);
+         long var14 = System.nanoTime();
+         byte[] var16 = var13.getSecret();
+         byte[] var17 = var13.getEncapsulation();
+         System.out.printf("Encapsulation took: %d ms%n", (var14 - var10) / 1000000L);
+         System.out.println("Ciphertext length: " + var17.length + " bytes");
+         FileUtils.saveBytes("output/ciphertext.bin", var17);
+         long var18 = System.nanoTime();
+         FrodoKEMExtractor var20 = new FrodoKEMExtractor(var9);
+         byte[] var21 = var20.extractSecret(var17);
+         long var22 = System.nanoTime();
+         System.out.printf("Decapsulation took: %d ms%n", (var22 - var18) / 1000000L);
+         System.out.println("\nShared key (encapsulator): " + Hex.toHexString(var16));
+         System.out.println("Shared key (decapsulator): " + Hex.toHexString(var21));
+         if (constantTimeEquals(var16, var21)) {
+            System.out.println("Keys match!");
+         } else {
+            System.out.println("Keys differ!");
+         }
+      } catch (Exception var24) {
+         var24.printStackTrace();
+      }
+
+   }
+
+   private static boolean constantTimeEquals(byte[] var0, byte[] var1) {
+      if (var0 != null && var1 != null && var0.length == var1.length) {
+         int var2 = 0;
+
+         for(int var3 = 0; var3 < var0.length; ++var3) {
+            var2 |= var0[var3] ^ var1[var3];
+         }
+
+         return var2 == 0;
+      } else {
+         return false;
+      }
+   }
+}
