@@ -1,0 +1,946 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+public class Answer
+{
+    [JsonPropertyName("id")]
+    public string Id { get; set; } = "";
+
+    [JsonPropertyName("text")]
+    public string Text { get; set; } = "";
+
+    [JsonPropertyName("next_question_id")]
+    public string? NextQuestionId { get; set; }
+}
+
+public class Question
+{
+    [JsonPropertyName("id")]
+    public string Id { get; set; } = "";
+
+    [JsonPropertyName("text")]
+    public string Text { get; set; } = "";
+
+    [JsonPropertyName("type")]
+    public string Type { get; set; } = "";
+
+    [JsonPropertyName("answers")]
+    public List<Answer>? Answers { get; set; }
+
+    [JsonPropertyName("next_question_id")]
+    public string? NextQuestionId { get; set; }
+}
+
+
+public class Questionnaire
+{
+    [JsonPropertyName("start_question_id")]
+    public string StartQuestionId { get; set; } = "";
+
+    [JsonPropertyName("questions")]
+    public List<Question> Questions { get; set; } = new();
+}
+
+public class LongestPath
+{
+    public int Length { get; set; }
+    public List<string> QuestionIds { get; set; } = new();
+    public List<string> AnswerPath { get; set; } = new();
+}
+public class ShortestPath
+{
+    public int Length { get; set; }
+    public List<string> QuestionIds { get; set; } = new();
+    public List<string> AnswerPath { get; set; } = new();
+}
+
+
+public static class QuestionnaireAnalyzer
+{
+    public static LongestPath FindLongestQuestionPath(Questionnaire questionnaire)
+    {
+        var questionMap = questionnaire.Questions.ToDictionary(q => q.Id);
+        var memo = new Dictionary<string, LongestPath>();
+
+        return DFS(questionnaire.StartQuestionId);
+
+        LongestPath DFS(string questionId)
+        {
+            if (memo.ContainsKey(questionId))
+                return memo[questionId];
+
+            var question = questionMap[questionId];
+
+            if (question.Answers is not null && question.Answers.Count > 0)
+            {
+                LongestPath best = null;
+
+                foreach (var ans in question.Answers)
+                {
+                    if (ans.NextQuestionId == null)
+                    {
+                        var terminal = new LongestPath
+                        {
+                            Length = 1,
+                            QuestionIds = new List<string> { question.Id },
+                            AnswerPath = new List<string> { ans.Id }
+                        };
+
+                        if (best == null || terminal.Length > best.Length)
+                            best = terminal;
+
+                        continue;
+                    }
+
+                    var next = DFS(ans.NextQuestionId);
+
+                    var candidate = new LongestPath
+                    {
+                        Length = 1 + next.Length,
+                        QuestionIds = new List<string> { question.Id },
+                        AnswerPath = new List<string> { ans.Id }
+                    };
+
+                    candidate.QuestionIds.AddRange(next.QuestionIds);
+                    candidate.AnswerPath.AddRange(next.AnswerPath);
+
+                    if (best == null || candidate.Length > best.Length)
+                        best = candidate;
+                }
+
+                memo[questionId] = best!;
+                return best!;
+            }
+
+            if (question.NextQuestionId == null)
+            {
+                var terminal = new LongestPath
+                {
+                    Length = 1,
+                    QuestionIds = new List<string> { question.Id }
+                };
+
+                memo[questionId] = terminal;
+                return terminal;
+            }
+            else
+            {
+                var next = DFS(question.NextQuestionId);
+
+                var result = new LongestPath
+                {
+                    Length = 1 + next.Length,
+                    QuestionIds = new List<string> { question.Id }
+                };
+
+                result.QuestionIds.AddRange(next.QuestionIds);
+                result.AnswerPath.AddRange(next.AnswerPath);
+
+                memo[questionId] = result;
+                return result;
+            }
+        }
+    }
+}
+
+public static class QuestionnaireShortestPath
+{
+    public static ShortestPath FindShortestQuestionPath(Questionnaire questionnaire)
+    {
+        var questionMap = questionnaire.Questions.ToDictionary(q => q.Id);
+
+        var queue = new Queue<(string qId, List<string> qList, List<string> aList)>();
+
+        queue.Enqueue(
+            (questionnaire.StartQuestionId,
+             new List<string> { questionnaire.StartQuestionId },
+             new List<string>())
+        );
+
+        while (queue.Count > 0)
+        {
+            var (currentId, qPath, aPath) = queue.Dequeue();
+            var question = questionMap[currentId];
+
+            if (question.Answers is not null && question.Answers.Count > 0)
+            {
+                foreach (var ans in question.Answers)
+                {
+                    var newQPath = new List<string>(qPath);
+                    var newAPath = new List<string>(aPath) { ans.Id };
+
+                    if (ans.NextQuestionId == null)
+                    {
+                        return new ShortestPath
+                        {
+                            Length = newQPath.Count,
+                            QuestionIds = newQPath,
+                            AnswerPath = newAPath
+                        };
+                    }
+
+                    newQPath.Add(ans.NextQuestionId);
+
+                    queue.Enqueue((ans.NextQuestionId, newQPath, newAPath));
+                }
+            }
+
+            else
+            {
+                if (question.NextQuestionId == null)
+                {
+                    return new ShortestPath
+                    {
+                        Length = qPath.Count,
+                        QuestionIds = qPath,
+                        AnswerPath = aPath
+                    };
+                }
+
+                var nextQ = question.NextQuestionId;
+
+                var newQPath = new List<string>(qPath) { nextQ };
+                var newAPath = new List<string>(aPath);
+
+                queue.Enqueue((nextQ, newQPath, newAPath));
+            }
+        }
+
+        throw new Exception("No path exists in questionnaire.");
+    }
+}
+
+public static class QuestionnairePathCounter
+{
+    public static int CountAllPossiblePaths(Questionnaire questionnaire)
+    {
+        var questionMap = questionnaire.Questions.ToDictionary(q => q.Id);
+
+        var memo = new Dictionary<string, int>();
+
+        var activeStack = new HashSet<string>();
+
+        int DFS(string questionId)
+        {
+            if (activeStack.Contains(questionId))
+                return -1;
+
+            if (memo.ContainsKey(questionId))
+                return memo[questionId];
+
+            activeStack.Add(questionId);
+
+            var q = questionMap[questionId];
+
+            int totalPaths = 0;
+
+            if (q.Answers != null && q.Answers.Count > 0)
+            {
+                foreach (var ans in q.Answers)
+                {
+                    if (ans.NextQuestionId == null)
+                    {
+                        totalPaths += 1;
+                    }
+                    else
+                    {
+                        int subPaths = DFS(ans.NextQuestionId);
+
+                        if (subPaths == -1)
+                            return -1;
+
+                        totalPaths += subPaths;
+                    }
+                }
+            }
+
+            else
+            {
+                if (q.NextQuestionId == null)
+                {
+                    totalPaths = 1;
+                }
+                else
+                {
+                    int subPaths = DFS(q.NextQuestionId);
+
+                    if (subPaths == -1)
+                        return -1;
+
+                    totalPaths = subPaths;
+                }
+            }
+
+            activeStack.Remove(questionId);
+            memo[questionId] = totalPaths;
+
+            return totalPaths;
+        }
+
+        return DFS(questionnaire.StartQuestionId);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Dynamic Questionnaire Analyzer - Longest Path\n");
+
+        string json = File.ReadAllText("C:\\Users\\shefk\\source\\repos\\shefketbylykbashi\\advanced_algorithms_26_G17\\week7\\questionnaire.json");
+
+        var questionnaire = JsonSerializer.Deserialize<Questionnaire>(json, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+
+        if (questionnaire == null)
+        {
+            Console.WriteLine("Failed to load questionnaire JSON.");
+            return;
+        }
+
+        var longest = QuestionnaireAnalyzer.FindLongestQuestionPath(questionnaire);
+
+        Console.WriteLine("Longest Path Found:");
+        Console.WriteLine($"Length: {longest.Length}");
+
+        Console.WriteLine("\nQuestions:");
+        foreach (var q in longest.QuestionIds)
+            Console.WriteLine(" - " + q);
+
+        Console.WriteLine("\nAnswers Used:");
+        foreach (var a in longest.AnswerPath)
+            Console.WriteLine(" - " + a);
+
+
+        var shortest = QuestionnaireShortestPath.FindShortestQuestionPath(questionnaire);
+
+        Console.WriteLine("\nShortest Path Found:");
+        Console.WriteLine($"Length: {shortest.Length}");
+
+        Console.WriteLine("\nQuestions:");
+        foreach (var q in shortest.QuestionIds)
+            Console.WriteLine(" - " + q);
+
+        Console.WriteLine("\nAnswers:");
+        foreach (var a in shortest.AnswerPath)
+            Console.WriteLine(" - " + a);
+
+        var count = QuestionnairePathCounter.CountAllPossiblePaths(questionnaire);
+
+        if (count == -1)
+            Console.WriteLine("Infinite paths detected (cycle in questionnaire!).");
+        else
+            Console.WriteLine($"\nTotal Possible Paths: {count}");
+    }
+}
+{
+  "start_question_id": "q1",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Do you own a car?",
+      "type": "radio",
+      "answers": [
+        {
+          "id": "a1_yes",
+          "text": "Yes",
+          "next_question_id": "q2"
+        },
+        {
+          "id": "a1_no",
+          "text": "No",
+          "next_question_id": "q5"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "What type of car?",
+      "type": "select",
+      "answers": [
+        {
+          "id": "a2_sedan",
+          "text": "Sedan",
+          "next_question_id": "q3"
+        },
+        {
+          "id": "a2_suv",
+          "text": "SUV",
+          "next_question_id": "q3"
+        },
+        {
+          "id": "a2_truck",
+          "text": "Truck",
+          "next_question_id": "q4"
+        },
+        {
+          "id": "a2_sports",
+          "text": "Sports",
+          "next_question_id": "q4"
+        }
+      ]
+    },
+
+    {
+      "id": "q3",
+      "text": "Passengers?",
+      "type": "radio",
+      "answers": [
+        {
+          "id": "a3_2to5",
+          "text": "2-5",
+          "next_question_id": "q6"
+        },
+        {
+          "id": "a3_6plus",
+          "text": "6+",
+          "next_question_id": "q6"
+        }
+      ]
+    },
+
+    {
+      "id": "q4",
+      "text": "Work use?",
+      "type": "radio",
+      "answers": [
+        {
+          "id": "a4_yes",
+          "text": "Yes",
+          "next_question_id": "q7"
+        },
+        {
+          "id": "a4_no",
+          "text": "No",
+          "next_question_id": "q6"
+        }
+      ]
+    },
+
+    {
+      "id": "q5",
+      "text": "Primary transport?",
+      "type": "select",
+      "answers": [
+        {
+          "id": "a5_public",
+          "text": "Public",
+          "next_question_id": "q6"
+        },
+        {
+          "id": "a5_bike",
+          "text": "Bike",
+          "next_question_id": "q6"
+        },
+        {
+          "id": "a5_walk",
+          "text": "Walk",
+          "next_question_id": "q6"
+        }
+      ]
+    },
+
+    {
+      "id": "q6",
+      "text": "Commute distance?",
+      "type": "text",
+      "next_question_id": "q8"
+    },
+
+    {
+      "id": "q7",
+      "text": "Work percentage?",
+      "type": "text",
+      "next_question_id": "q8"
+    },
+
+    {
+      "id": "q8",
+      "text": "Satisfied?",
+      "type": "radio",
+      "answers": [
+        {
+          "id": "a8_yes",
+          "text": "Yes",
+          "next_question_id": null
+        },
+        {
+          "id": "a8_no",
+          "text": "No",
+          "next_question_id": "q9"
+        }
+      ]
+    },
+
+    {
+      "id": "q9",
+      "text": "Improve?",
+      "type": "text",
+      "next_question_id": null
+    }
+  ]
+}
+Dynamic Questionnaire Analysis 
+Programming Assignment 
+Introduction 
+In many applications (surveys, medical assessments, financial applications), questionnaires have conditional logic 
+where certain questions only appear based on previous answers. For example, if someone answers “Yes” to “Do you 
+own a car?”, they might see follow-up questions about the car’s make and model. This creates a tree-like structure 
+where different answer paths lead to different sets of questions. 
+You will implement algorithms using recursion, depth-first search, and dynamic programming to analyze these 
+dynamic questionnaires and extract useful insights about the question flow. 
+Dataset 
+You are provided with questionnaire data in JSON format. Each question can have: - A unique ID - Question text - 
+Question type (radio, select, text, etc.) - Possible answers (for radio/select questions) - Conditional rules that determine 
+which questions appear next based on the answer 
+TypeScript Interfaces 
+interface Answer { 
+id: string; 
+text: string; 
+next_question_id: string | null; // null means end of questionnaire 
+} 
+interface Question { 
+id: string; text: string; type: "radio" | 
+"select" | "text" | "checkbox"; answers?: 
+Answer[]; // Only for radio/select types 
+next_question_id?: string | null; // For text/checkbox (unconditional next) 
+} 
+interface Questionnaire { 
+questions: Question[]; 
+start_question_id: string; 
+} 
+JSON Structure 
+{ 
+"start_question_id": "q1", 
+"questions": [ 
+{ 
+"id": "q1", 
+"text": "Do you own a car?", 
+1 
+"type": "radio", 
+"answers": [ 
+{ 
+"id": "a1_yes", 
+"text": "Yes", 
+"next_question_id": "q2" 
+}, 
+{ 
+"id": "a1_no", 
+"text": "No", 
+"next_question_id": "q5" 
+} 
+] 
+}, 
+{ 
+"id": "q2", 
+"text": "What type of car do you own?", 
+"type": "select", 
+"answers": [ 
+{ 
+"id": "a2_sedan", 
+"text": "Sedan", 
+"next_question_id": "q3" 
+}, 
+{ 
+"id": "a2_suv", 
+"text": "SUV", 
+"next_question_id": "q3" 
+}, 
+{ 
+"id": "a2_truck", 
+"text": "Truck", 
+"next_question_id": "q4" 
+}, 
+{ 
+"id": "a2_sports", 
+"text": "Sports Car", 
+"next_question_id": "q4" 
+} 
+] 
+}, 
+{ 
+"id": "q3", 
+"text": "How many passengers can your vehicle seat?", 
+"type": "radio", 
+"answers": [ 
+{ 
+"id": "a3_2to5", 
+"text": "2-5", 
+"next_question_id": "q6" 
+}, 
+2 
+{ 
+"id": "a3_6plus", 
+"text": "6+", 
+"next_question_id": "q6" 
+} 
+] 
+}, 
+{ 
+"id": "q4", 
+"text": "Do you use your vehicle for work purposes?", 
+"type": "radio", 
+"answers": [ 
+{ 
+"id": "a4_yes", 
+"text": "Yes", 
+"next_question_id": "q7" 
+}, 
+{ 
+"id": "a4_no", 
+"text": "No", 
+"next_question_id": "q6" 
+} 
+] 
+}, 
+{ 
+"id": "q5", 
+"text": "What is your primary mode of transportation?", 
+"type": "select", 
+"answers": [ 
+{ 
+"id": "a5_public", 
+"text": "Public Transit", 
+"next_question_id": "q6" 
+}, 
+{ 
+"id": "a5_bike", 
+"text": "Bicycle", 
+"next_question_id": "q6" 
+}, 
+{ 
+"id": "a5_walk", 
+"text": "Walking", 
+"next_question_id": "q6" 
+} 
+] 
+}, 
+{ 
+"id": "q6", 
+"text": "What is your annual commute distance?", 
+"type": "text", 
+"next_question_id": "q8" 
+3 
+4 
+}, 
+{ 
+"id": "q7", 
+"text": "What percentage of your vehicle use is for work?", 
+"type": "text", 
+"next_question_id": "q8" 
+}, 
+{ 
+"id": "q8", 
+"text": "Are you satisfied with your current transportation 
+situation?", 
+"type": "radio", 
+"answers": [ 
+{ 
+"id": "a8_yes", 
+"text": "Yes", 
+"next_question_id": null 
+}, 
+{ 
+"id": "a8_no", 
+"text": "No", 
+"next_question_id": "q9" 
+} 
+] 
+}, 
+{ 
+"id": "q9", 
+"text": "What would you like to improve?", 
+"type": "text", 
+"next_question_id": null 
+} 
+] 
+} 
+Questionnaire Flow Visualization 
+q1: Own a car? 
+ Yes → q2: Car type? 
+  Sedan → q3: Passengers? 
+   2-5 → q6: Commute distance? → q8: Satisfied? 
+    Yes → END 
+    No → q9: Improve? → END 
+   6+ → q6: Commute distance? → q8: Satisfied? 
+   Yes → END 
+   No → q9: Improve? → END 
+  SUV → q3: Passengers? 
+   2-5 → q6: Commute distance? → q8: Satisfied? 
+    Yes → END 
+    No → q9: Improve? → END 
+   6+ → q6: Commute distance? → q8: Satisfied? 
+   Yes → END 
+5 
+   No → q9: Improve? → END 
+  Truck → q4: Work use? 
+   Yes → q7: Work %? → q8: Satisfied? 
+    Yes → END 
+    No → q9: Improve? → END 
+   No → q6: Commute distance? → q8: Satisfied? 
+   Yes → END 
+   No → q9: Improve? → END 
+  Sports → q4: Work use? 
+  Yes → q7: Work %? → q8: Satisfied? 
+   Yes → END 
+   No → q9: Improve? → END 
+  No → q6: Commute distance? → q8: Satisfied? 
+  Yes → END 
+  No → q9: Improve? → END 
+ No → q5: Primary transport? 
+ Public Transit → q6: Commute distance? → q8: Satisfied? 
+   Yes → END 
+   No → q9: Improve? → END 
+ Bicycle → q6: Commute distance? → q8: Satisfied? 
+   Yes → END 
+   No → q9: Improve? → END 
+ Walking → q6: Commute distance? → q8: 
+Satisfied?  Yes → END 
+ No → q9: Improve? → END 
+ 
+Problem 1: Find Longest Question Path 
+Description 
+Determine the longest possible path through the questionnaire—that is, the maximum number of questions a user could 
+answer before reaching the end. This represents the most detailed response path. 
+Function Signature 
+interface LongestPath { 
+length: number; 
+question_ids: string[]; 
+answer_path: string[]; // Answer IDs that lead to this path 
+} 
+function findLongestQuestionPath(questionnaire: Questionnaire): LongestPath { 
+/** 
+* Find the longest possible path through the questionnaire.* 
+* @param questionnaire - The questionnaire object with questions and start point 
+* @returns Object containing the length, question IDs, and answer choices for the 
+longest path 
+*/ 
+// Your implementation here 
+} 
+Input Format 
+• questionnaire: An object containing the array of questions and the starting question ID 
+Output Format 
+Return an object containing: - length: The number of questions in the longest path question_ids: Array of 
+question IDs in order for this path - answer_path: Array of answer IDs that lead to this longest path 
+Example 
+findLongestQuestionPath(questionnai
+ re); // Returns: 
+{ length: 6, question_ids: ["q1", "q2", "q4", 
+"q7", "q8", "q9"], answer_path: ["a1_yes", 
+"a2_truck", "a4_yes", "a8_no"] } 
+// Path: Own car (Yes) → Truck → Work use (Yes) → Work % → Satisfied (No) → Improve 
+Requirements 
+• Use recursion with DFS to explore all possible paths 
+• Handle questions with multiple possible answers 
+• Track the path that leads to the maximum length 
+• Time complexity should be O(n × m) where n is questions and m is average answers per question 
+Problem 2: Find Shortest Question Path 
+Description 
+Determine the shortest possible path through the questionnaire—the minimum number of questions a user must answer 
+to complete the survey. This represents the quickest completion route. 
+Function Signature 
+interface ShortestPath { 
+length: number; 
+question_ids: string[]; 
+answer_path: string[]; 
+} 
+function findShortestQuestionPath(questionnaire: Questionnaire): ShortestPath { 
+/** 
+* Find the shortest possible path through the questionnaire.* 
+* @param questionnaire - The questionnaire object 
+* @returns Object containing the length, question IDs, and answer choices for the 
+shortest path 
+*/ 
+// Your implementation here 
+} 
+Input Format 
+6 
+• questionnaire: An object containing the array of questions and the starting question ID 
+Output Format 
+Return an object containing: - length: The number of questions in the shortest path question_ids: Array of 
+question IDs in order for this path - answer_path: Array of answer IDs that lead to this shortest path 
+Example 
+findShortestQuestionPath(questionna
+ ire); // Returns: 
+{ length: 2, 
+question_ids: ["q1", "q2", "q3", "q6", "q8"], 
+answer_path: ["a1_yes", "a2_sedan", "a3_2to5", "a8_yes"] 
+} 
+// Path: Own car (Yes) → Sedan → 2-5 passengers → Commute distance → Satisfied (Yes) → 
+END 
+Requirements 
+• Use BFS or DFS to find the shortest path 
+• Consider all possible answer branches 
+• Return any valid shortest path if multiple exist with same length 
+Problem 3: Count All Possible Paths 
+Description 
+Calculate the total number of distinct paths through the questionnaire. Each unique combination of answers that leads 
+from start to end counts as a separate path. This helps understand the complexity of the questionnaire. 
+Function Signature 
+function countAllPossiblePaths(questionnaire: Questionnaire): 
+number { /** 
+* Count the total number of distinct paths through the 
+questionnaire.* 
+* @param questionnaire - The questionnaire object 
+* @returns The total number of unique paths from start to end 
+*/ 
+// Your implementation here 
+} 
+Input Format 
+• questionnaire: An object containing the array of questions and the starting question ID 
+Output Format 
+Return an integer representing the total number of distinct paths. 
+7 
+Example 
+countAllPossiblePaths(questionnaire
+ ); 
+// Returns: 16 
+// There are 16 different ways to complete this questionnaire based on different answer 
+combinations 
+Requirements 
+• Use recursion to traverse all branches 
+• Consider each answer choice as creating a new branch 
+• Avoid counting the same path multiple times 
+• Handle cycles gracefully (return -1 if infinite paths detected) 
+Problem 4: Find All Questions Reachable from Answer 
+Description 
+Given a specific question and a specific answer to that question, find all questions that could possibly be reached later 
+in the questionnaire following that answer path. This helps understand the downstream impact of each answer choice. 
+Function Signature 
+interface ReachableQuestions { 
+question_id: string; 
+question_text: string; 
+min_depth: number; // Minimum steps from the starting answer to reach this question 
+} 
+function findReachableQuestions( 
+questionnaire: 
+Questionnaire, 
+questionId: string, 
+answerId: string 
+): ReachableQuestions[] 
+{ /** 
+* Find all questions reachable after selecting a specific answer. 
+* 
+* @param questionnaire - The questionnaire object 
+* @param questionId - The ID of the question being answered 
+* @param answerId - The ID of the answer choice 
+* @returns Array of reachable questions with their minimum depth */ 
+// Your implementation here 
+} 
+Input Format 
+• questionnaire: The questionnaire object 
+• questionId: ID of the starting question 
+8 
+• answerId: ID of the specific answer choice 
+Output Format 
+Return an array of objects, each containing: - question_id: The ID of a reachable question question_text: 
+The text of the reachable question - min_depth: Minimum number of steps from the starting answer to reach this 
+question 
+Sort by min_depth ascending, then by question_id ascending. 
+Example 
+findReachableQuestions(questionnaire, "q2", 
+"a2_truck"); // Returns: 
+[ 
+{ question_id: 
+"q4", 
+question_text: "Do you use your vehicle for work purposes?", 
+min_depth: 1 
+}, 
+{ question_id: 
+"q6", 
+question_text: "What is your annual commute distance?", 
+min_depth: 2 
+}, 
+{ question_id: 
+"q7", 
+question_text: "What percentage of your vehicle use is for work?", 
+min_depth: 2 
+}, 
+{ question_id: 
+"q8", 
+question_text: "Are you satisfied with your current transportation 
+situation?", min_depth: 3 
+}, 
+{ question_id: 
+"q9", 
+question_text: "What would you like to improve?", 
+min_depth: 4 
+} 
+] 
+Requirements 
+• Use BFS or DFS with depth tracking 
+• Track the minimum depth for each reachable question 
+• Handle questions that can be reached through multiple paths (use minimum depth) 
+• Return empty array if the answer leads directly to end 
+9 
+Problem 5: Calculate Question Appearance Probability 
+Description 
+Calculate the probability that each question will be shown to a user, assuming all answer choices are equally likely to 
+be selected. This helps identify which questions are most/least frequently seen and can inform questionnaire design. 
+Function Signature 
+interface QuestionProbability { 
+question_id: string; 
+question_text: string; 
+probability: number; // Value between 0 and 1 
+expected_position: number; // Average position in questionnaire when shown 
+} 
+function 
+calculateQuestionProbabilities( 
+questionnaire: Questionnaire 
+): QuestionProbability[] 
+{ /** 
+* Calculate the probability of each question being shown. 
+* 
+* @param questionnaire - The questionnaire object 
+* @returns Array of questions with their appearance probabilities */ 
+// Your implementation here 
+} 
+Input Format 
+• questionnaire: The questionnaire object 
+Output Format 
+Return an array of objects, each containing: - question_id: The question ID - question_text: The question 
+text - probability: Probability this question appears (0.0 to 1.0) - expected_position: Average position 
+when it appears (first question = 1) Sort by probability descending. 
+Example 
+calculateQuestionProbabilities(questionna
+ ire); // Returns: 
+[ 
+{ question_id: "q1", 
+question_text: "Do you own a 
+car?", 
+probability: 1.0, 
+expected_position: 1.0 
+}, 
+{ question_id: "q8", question_text: "Are you satisfied with your current 
+transportation situation?", probability: 1.0, expected_position: 5.0 
+}, 
+10 
+{ question_id: 
+"q2", 
+question_text: 
+"What type of 
+car do you 
+own?", 
+probability: 0.5, 
+expected_position: 2.0 
+}, 
+{ question_id: 
+"q6", 
+question_text: "What is your annual commute 
+distance?", probability: 0.75, 
+expected_position: 4.0 
+}, 
+// ... more questions 
+] 
+Requirements 
+• Assume all answer choices at each question are equally likely 
+• Use recursion or dynamic programming to calculate probabilities 
+• The first question always has probability 1.0 
+• Handle conditional branching correctly 
+• Round probabilities to 4 decimal places 
+11 
