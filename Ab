@@ -1,0 +1,181 @@
+1.1 Qëllimi i dokumentit
+Dokumenti ka për qëllim identifikimin, analizimin dhe trajtimin e rreziqeve që mund të ndikojnë në procesin e analizës, dizajnimit, implementimit dhe operimit të platformës hibride blockchain për verifikimin e kredencialeve akademike. Dokumenti siguron që të gjitha palët e interesit të kenë një pasqyrë të qartë mbi rreziqet dhe masat e nevojshme për minimizimin e tyre.
+ 
+1.2 Vlefshmëria e dokumentit
+Dokumenti është i vlefshëm gjatë të gjitha fazave të zhvillimit të projektit, duke përfshirë analizën e kërkesave, projektimin teknik, zhvillimin e komponentëve, integrimin me sistemet ekzistuese, testimin funksional dhe të sigurisë, si dhe operimin dhe mirëmbajtjen e sistemit.
+Çdo ndryshim në dokument mund të kryhet vetëm nga personat e autorizuar.
+1.3 Definimi i termave dhe shkurtesave
+API    - Application Programming Interface
+GDPR - General Data Protection Regulation
+PKI     - Public Key Infrastructure
+DID    - Decentralized Identifier
+ISP     - Internet Service Provider
+UPS   - Uninterruptible Power Supply
+DNS    - Domain Name System
+Cloud  - Shërbim kompjuterik i ofruar përmes internetit, pa servera lokal
+Azure  - Microsoft Azure Cloud Platform
+AWS   - Amazon Web Services
+MASHT- Ministria e Arsimit, Shkencës, Teknologjisë dhe Inovacionit
+EBSI     - European Blockchain Services Infrastructure
+ 
+1.4 Relacioni me dokumentet e tjera
+Ky dokument lidhet me dy dokumente kryesore të projektit: Studimin e Fizibilitetit, i cili ofron analizën fillestare të mjedisit teknik e operacional dhe Specifikimin e Kërkesave të Shfrytëzuesve, që përcakton kërkesat funksionale dhe jofunksionale mbi të cilat bazohet vlerësimi i rreziqeve.
+2 Menaxhimi i Rrezikut
+Vlerësimi i rrezikut është realizuar duke analizuar dokumentet bazë të projektit, informacionet e grumbulluara nga klienti mbi gjendjen ekzistuese të sistemeve dhe infrastrukturës, si dhe teknologjitë që do të përdoren gjatë implementimit. Procesi është plotësuar me komunikim me prodhuesit dhe partnerët, duke siguruar një pasqyrë të qartë të rreziqeve dhe mënyrave të trajtimit të tyre.
+ 
+2.1 Rreziku nga mungesa e energjisë elektrike
+2.1.1 Përshkrimi i këtij rreziku
+Ndërprerjet e energjisë elektrike mund të ndikojnë në funksionimin e pajisjeve të përdoruesve dhe në qasjen e tyre në sistem. Edhe pse platforma operon në një infrastrukturë të centralizuar ose cloud, ndërprerjet në institucionet publike mund të pengojnë përdoruesit të kryejnë procese verifikimi në kohë të duhur. Në raste të caktuara, ndërprerjet mund të ndikojnë edhe në funksionimin e pajisjeve të rrjetit lokal të institucionit, duke shkaktuar vështirësi në komunikim me sistemin.
+ 
+2.1.2 Gjasa për ndodhjen e rrezikut
+Gjasa për ndodhjen e këtij rreziku vlerësohet mesatare. Furnizimi me energji në institucionet publike është përgjithësisht stabil, megjithatë situata të tilla si punimet në rrjet, defektet teknike ose kushtet e pafavorshme atmosferike mund të shkaktojnë ndërprerje të përkohshme që ndikojnë në qasjen e përdoruesve në sistem.
+ 
+2.1.3 Ndikimi i rrezikut në projektin tonë
+Ndikimi i këtij rreziku reflektohet në uljen e disponueshmërisë së shërbimit, në vonesa gjatë proceseve të sinkronizimit dhe në ndërprerje të përkohshme të qasjes së përdoruesve në platformë. Pas rikthimit të kushteve normale të funksionimit, ne duhet të verifikojmë gjendjen e pajisjeve dhe funksionalitetin e kanaleve të komunikimit, me qëllim garantimin e disponueshmërisë dhe operimit të pandërprerë të sistemit.
+ 
+2.1.4 Mënyra e trajtimit të rrezikut
+Rreziku menaxhohet duke pajisur pikat kryesore të rrjetit me UPS për të siguruar funksionimin e pajisjeve gjatë ndërprerjeve të shkurtra. Platforma duhet të operojë në infrastrukturë cloud me redundancë, në mënyrë që ndërprerjet lokale të mos ndikojnë në funksionimin qendror. Përdoruesve u rekomandohet të kenë pajisje me bateri rezervë ose qasje alternative në internet për të ruajtur lidhjen me sistemin.
+ 
+2.2 Rreziku i privatësisë së të dhënave personale
+2.2.1 Përshkrimi i këtij rreziku
+Kredencialet akademike përmbajnë të dhëna të ndjeshme personale, të cilat duhet të trajtohen me kujdes të lartë dhe sipas legjislacionit.
+ 
+2.2.2 Gjasa për ndodhjen e rrezikut
+Gjasa për ndodhjen e këtij rreziku është e lartë, pasi çdo sistem që përpunon të dhëna personale mbetet i ekspozuar ndaj rreziqeve të privatësisë dhe sigurisë, pavarësisht masave mbrojtëse të zbatuara.
+ 
+2.2.3 Ndikimi i rrezikut në projektin tonë
+Shkelje e GDPR, dëmtim reputacional, pezullim i projektit nga autoritetet.
+ 
+2.2.4 Mënyra e trajtimit të rrezikut
+Rreziku i cenimit të privatësisë trajtohet duke ruajtur vetëm hash-e të kredencialeve në blockchain, duke shmangur ruajtjen e të dhënave personale në mënyrë të drejtpërdrejtë. Implementimi i identifikuesve të decentralizuar (DID) ofron një mekanizëm të sigurt autentikimi pa ekspozuar informacione sensitive. Të gjitha të dhënat operacionale apo verifikimet e detajuara ruhen jashtë zinxhirit në sisteme të enkriptuara (off-chain), duke garantuar përputhshmëri me GDPR.
+ 
+2.3 Rreziku nga sulmet kibernetike
+2.3.1 Përshkrimi i këtij rreziku
+Rreziku nga sulmet kibernetike qëndron në mundësinë që aktorë të jashtëm ose të brendshëm të tentojnë ndërhyrje të paautorizuara në sistem, me qëllim komprometimin e të dhënave, ndërprerjen e shërbimit apo manipulimin e proceseve të platformës. Duke qenë se sistemi trajton të dhëna të ndjeshme dhe operon në një mjedis institucional, ai mbetet një objektiv i vazhdueshëm për sulme të ndryshme teknike.
+ 
+2.3.2 Gjasa për ndodhjen e rrezikut
+Gjasa për paraqitjen e këtij rreziku është e lartë, pasi sistemet publike dhe platformat që përpunojnë të dhëna të ndjeshme janë shpesh shënjestër e sulmeve kibernetike. Përpjekjet për skanime, akses jo të autorizuar, abuzime me API dhe sulme të automatizuara mund të ndodhin në mënyrë të vazhdueshme, pavarësisht masave të sigurisë.
+ 
+2.3.3 Ndikimi i rrezikut në projektin tonë
+Nëse një sulm kibernetik ka sukses, ai mund të shkaktojë ndërprerje të shërbimit, komprometim të të dhënave, humbje të besueshmërisë së platformës dhe ndikim financiar apo institucional. Edhe tentativat e pasuksesshme mund të ndikojnë te performanca e sistemit, duke krijuar vonesa, ngarkesë të panevojshme dhe ulje të disponueshmërisë.
+ 
+2.3.4 Mënyra e trajtimit të rrezikut
+Rreziku trajtohet përmes zbatimit të mekanizmave të avancuar të sigurisë, duke përfshirë firewall-e të nivelit enterprise, monitorim të trafikut dhe përdorimin e sistemeve IDS/IPS për detektimin dhe parandalimin e aktiviteteve anomale. API-të kufizohen me politika të kontrollit të qasjes dhe mekanizma të mbrojtjes ndaj abuzimeve si rate-limiting. Gjithashtu aplikohet enkriptim i të dhënave dhe komunikimit, kontroll i rreptë i privilegjeve të përdoruesve dhe testime periodike të sigurisë për të identifikuar dhe adresuar dobësitë potenciale.
+ 
+ 
+ 
+ 
+2.4 Rreziku ligjor dhe institucional
+2.4.1 Përshkrimi i këtij rreziku
+Ky rrezik lidhet me mundësinë që ndryshimet në legjislacion, rregulloret e brendshme administrative ose politikat e brendshme të institucionit të ndikojnë në mënyrën se si sistemi operon. Nëse procedurat zyrtare ndryshojnë pas implementimit të platformës, mund të krijohet mospërputhje ndërmjet funksionaliteteve aktuale të sistemit dhe kërkesave të reja ligjore ose institucionale.
+ 
+2.4.2 Gjasa për ndodhjen e rrezikut
+Gjasa e paraqitjes së këtij rreziku është mesatare, pasi institucionet publike shpesh modifikojnë procedurat administrative, standardet e punës ose udhëzimet operacionale si rezultat i rregullimeve ligjore, ndryshimeve të politikave apo reformave institucionale.
+ 
+2.4.3 Ndikimi i rrezikut në projektin tonë
+Ndryshimet ligjore ose procedurale mund të kërkojnë rikonfigurim të sistemit, përditësim të proceseve të punës ose përshtatje të funksionaliteteve për të siguruar përputhshmëri me kërkesat e reja. Kjo mund të shkaktojë vonesa, rritje të ngarkesës administrative dhe nevojë për ndërhyrje teknike.
+ 
+2.4.4 Mënyra e trajtimit të rrezikut
+Rreziku menaxhohet duke monitoruar vazhdimisht ndryshimet ligjore dhe rregullative që lidhen me sektorin e arsimit dhe përpunimin e të dhënave. Bashkëpunimi i rregullt me departamentet juridike të institucionit dhe përshtatja e proceseve të sistemit sipas kërkesave të reja sigurojnë që platforma të mbetet gjithmonë në përputhje me kuadrin ligjor dhe procedural.
+ 
+2.5 Rreziku i buxhetit dhe kostove të paparashikuara
+2.5.1 Përshkrimi i këtij rreziku
+Ky rrezik lidhet me mundësinë që kostoja reale e projektit të tejkalojë planifikimin fillestar, për shkak të kërkesave shtesë, nevojës për funksionalitete të reja, sfidave teknike gjatë integrimit ose ndryshimeve të papritura në infrastrukturën e institucionit. Projekte të kësaj natyre shpesh kërkojnë përshtatje të vazhdueshme, të cilat mund të krijojnë shpenzime të pa-planifikuara.
+ 
+2.5.2 Gjasa për ndodhjen e rrezikut
+Gjasa e këtij rreziku është mesatare, pasi edhe pse planifikimi financiar është bërë në bazë të kërkesave ekzistuese, çdo projekt që përfshin integrime, teknologji të reja dhe bashkëpunim me institucione publike mbetet i ekspozuar ndaj kërkesave të papritura dhe kompleksitetit shtesë.
+ 
+2.5.3 Ndikimi i rrezikut në projektin tonë
+Një devijim i kostove mund të shkaktojë vonesa në implementim, ndryshime në planin e punës, reduktim të funksionaliteteve ose nevojën për aprovime administrative shtesë. Në raste më të rënda, mund të prekë qëndrueshmërinë financiare të projektit dhe të ushqejë vonesa nga pala institucionale.
+ 
+2.5.4 Mënyra e trajtimit të rrezikut
+Rreziku i tejkalimit të buxhetit menaxhohet përmes planifikimit të kujdesshëm të kostove që në fazën fillestare të projektit dhe ndarjes së buxhetit sipas fazave të implementimit. Përdorimi i teknologjive open-source ndihmon në uljen e shpenzimeve të licencimit dhe ruan fleksibilitetin teknik pa kosto të larta shtesë. Në kontratë mund të parashihet një pozicion i dedikuar për shërbime të paparashikuara ose për integrime të reja, i cili mundëson faturimin e punëve shtesë sipas orëve apo ditëve të punës, duke ofruar transparencë dhe fleksibilitet financiar. Monitorimi i rregullt i shpenzimeve dhe komunikimi i vazhdueshëm me institucionin sigurojnë identifikimin dhe adresimin në kohë të çdo devijimi potencial.
+ 
+2.6 Rreziku nga mungesa e internetit
+2.6.1 Përshkrimi i këtij rreziku
+Platforma kërkon lidhje të qëndrueshme me internetin nga ana e institucionit për të komunikuar me shërbimet cloud. Ndërprerjet apo dobësitë në rrjetin lokal të institucionit, defektet e ISP-ve, punimet teknike ose problemet me pajisjet e rrjetit mund të pengojnë çasjen në sistem, pavarësisht se infrastruktura cloud funksionon normalisht.
+ 
+2.6.2 Gjasa për ndodhjen e rrezikut
+Gjasa e këtij rreziku është mesatare, pasi ndërprerjet e internetit në institucionet publike mund të ndodhin si rezultat i punimeve në rrjet, defekteve të pajisjeve, kushteve atmosferike ose problemeve të ofruesit të shërbimit.
+ 
+2.6.3 Ndikimi i rrezikut në projektin tonë
+Ndikimi kryesor është pamundësia e përdoruesve për të hyrë në platformë, vonesa në procese të verifikimit dhe ulje e disponueshmërisë së shërbimit brenda institucionit.
+ 
+2.6.4 Mënyra e trajtimit të rrezikut
+Rreziku trajtohet përmes përdorimit të linjave të qëndrueshme të internetit, pajisjes së pikave kritike të rrjetit të institucionit me UPS për të shmangur ndërprerjet e pajisjeve të komunikimit dhe konfigurimit të rrjetit lokal në mënyrë të duhur. Në rast ndërprerjesh, platforma në cloud vazhdon të funksionojë, ndërsa përdoruesve u rekomandohet të përdorin rrjete alternative ose pajisje me lidhje rezervë kur është e mundur.
+ 
+2.7 Rreziku i dëmtimit fizik të pajisjeve
+2.7.1 Përshkrimi i këtij rreziku
+Ky rrezik lidhet me dëmtimin fizik të pajisjeve të institucionit që sigurojnë funksionimin e platformës, si pajisjet e rrjetit (router, switch, modem, firewall) ose pajisjet që mundësojnë lidhjen me internetin. Defektet, konsumimi i komponentëve, dëmtimet elektrike ose incidentet mjedisore mund të shkaktojnë ndërprerje të komunikimit ndërmjet institucionit dhe platformës cloud.
+ 
+2.7.2 Gjasa për ndodhjen e rrezikut
+Gjasa është mesatare, pasi pajisjet e rrjetit të institucioneve publike i nënshtrohen përdorimit të vazhdueshëm dhe mund të pësojnë defekte teknike, mbingarkesë elektrike apo dëmtime për shkak të kushteve të punës.
+ 
+2.7.3 Ndikimi i rrezikut në projektin tonë
+Dëmtimi i pajisjeve kritike të rrjetit ndikon drejtpërdrejt në mundësinë e qasjes në platformë, duke shkaktuar ndërprerje ose vonesa në verifikime. Sistemi cloud vazhdon të funksionojë normalisht, por institucioni dhe palët e tjera humbin përkohësisht qasjen derisa pajisjet të riparohen/ndërrohen.
+ 
+2.7.4 Mënyra e trajtimit të rrezikut
+Trajtimi bëhet përmes mirëmbajtjes periodike të pajisjeve të rrjetit të institucionit, përdorimit të pajisjeve mbrojtëse ndaj mbingarkesës elektrike, zëvendësimit të pajisjeve të dëmtuara dhe mbajtjes së një numri minimal pajisjesh rezervë për ndërhyrje të shpejtë.
+ 
+ 
+2.8 Rreziku i mosdisponueshmërisë së cloud-it
+2.8.1 Përshkrimi i këtij rreziku
+Edhe pse platforma operon në një mjedis cloud me redundancë të lartë, shërbimet cloud të ofruesve globalë mund të përjetojnë ndërprerje të përkohshme për shkak të defekteve infrastrukturore, ri-konfigurimeve, problemeve me rrjetin global, dështimeve në qendrat e të dhënave ose incidenteve të brendshme teknike. Këto ndërprerje ndodhin rrallë, por kur paraqiten, mund të pengojnë përkohësisht komunikimin me platformën.
+ 
+2.8.2 Gjasa për ndodhjen e rrezikut
+Gjasa vlerësohet e ulët. Ofruesit kryesorë të cloud-it (Azure, AWS, Google Cloud) funksionojnë me standarde të disponueshmërisë mbi 99.9%, por historikisht kanë pasur raste të ndërprerjeve të pjesshme ose rajonale për shkak të problemeve me rrjetin, DNS-in ose qendrat e të dhënave.
+ 
+2.8.3 Ndikimi i rrezikut në projektin tonë
+Ndërprerja e cloud-it mund të pengojë përkohësisht qasjen në platformë për të gjithë përdoruesit, pavarësisht gjendjes së infrastrukturës së institucionit. Proceset e verifikimit ndalen derisa shërbimet të rikthehen, duke shkaktuar vonesa në operimet që varen nga sistemi. Të dhënat mbeten të sigurta, por funksionaliteti nuk është i disponueshëm.
+ 
+2.8.4 Mënyra e trajtimit të rrezikut
+Rreziku menaxhohet përmes përdorimit të shërbimeve cloud me redundancë rajonale, konfigurimit të backup endpoints dhe monitorimit të vazhdueshëm të shërbimeve cloud. Institucionit i komunikohet politika e disponueshmërisë nga ofruesi i cloud-it dhe në raste ndërprerjesh ofrohet transparencë dhe njoftim i menjëhershëm deri në rikthimin e plotë të funksionimit.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2.9 Rreziku nga ndryshimet e konfigurimeve dhe përditësimet softuerike në infrastrukturën cloud dhe blockchain
+2.9.1 Përshkrimi i këtij rreziku
+Ofruesit e shërbimeve cloud dhe platformave blockchain kryejnë përditësime periodike në konfigurime, në politikat e shërbimit dhe në komponentët softuerikë me qëllim përmirësimin e performancës dhe sigurisë. Këto ndryshime ndodhin rrallë, por mund të ndikojnë në mënyrën se si platforma jonë komunikon me shërbimet cloud, API-të, ose mekanizmat e verifikimit blockchain.
+ 
+2.9.2 Gjasa për ndodhjen e rrezikut
+Gjasa vlerësohet e ulët, pasi përditësimet në infrastrukturat cloud dhe blockchain janë të kontrolluara, të paralajmëruara dhe zakonisht nuk shkaktojnë ndërprerje të papritura. Megjithatë, raste të veçanta të ndryshimeve teknike ose të softuerit mund të kërkojnë përshtatje të konfigurimeve të platformës.
+ 
+2.9.3 Ndikimi i rrezikut në projektin tonë
+Ndryshimet në konfigurime ose në versionet softuerike mund të ndikojnë në funksionimin e integrimeve, sinkronizimin me komponentët blockchain, ose në sjelljen e disa proceseve të platformës. Kjo mund të shkaktojë vonesa, funksionalitet të kufizuar përkohësisht ose nevojë për ndërhyrje teknike.
+ 
+2.9.4 Mënyra e trajtimit të rrezikut
+Rreziku menaxhohet duke monitoruar në mënyrë të vazhdueshme njoftimet dhe raportet e ndryshimeve nga ofruesit e cloud-it dhe blockchain-it, si dhe duke testuar përditësimet në një mjedis të kontrolluar para integrimit në sistemin prodhues. Platforma dizajnohet me fleksibilitet të mjaftueshëm konfigurues për t'u përshtatur me ndryshime të tilla, ndërsa çdo ndërhyrje teknike realizohet në kohë për të garantuar funksionimin e pandërprerë të sistemit.
+2.10 Rreziku i paaftësisë për të kaluar auditime dhe certifikime
+2.10.1 Përshkrimi i këtij rreziku
+Ky rrezik lidhet me mundësinë që gjatë procesit të auditimit dhe vlerësimit të përputhshmërisë, të paraqiten kërkesa të reja apo të përditësuara nga GDPR, ISO 27001, standardet e EBSI-t, apo rregullore të tjera kombëtare/internacionale që kanë të bëjnë me trajtimin dhe verifikimin e kredencialeve akademike. Platforma duhet të përputhet me kërkesa që mund të evoluojnë me kalimin e kohës.
+ 
+2.10.2 Gjasa për ndodhjen e rrezikut
+Gjasa vlerësohet mesatare, sidomos në fazat e para të operimit, kur procedurat institucionale, dokumentimi dhe politikat e sigurisë janë ende në proces përshtatjeje me standardet më të fundit.
+ 
+2.10.3 Ndikimi i rrezikut në projektin tonë
+Nëse paraqiten mospërputhje gjatë auditimit, kjo mund të shkaktojë:
+– kërkesë për përmirësime teknike ose procedurale,
+– rikonfigurime të sistemit,
+– vonesa në certifikim,
+– ngarkesë shtesë administrative për MASHT
+– rrezik reputacional nëse proceset nuk dokumentohen si duhet.
+2.10.4 Mënyra e trajtimit të rrezikut
+Rreziku trajtohet përmes auditimeve të rregullta të sigurisë dhe përputhshmërisë, dokumentimit të praktikave operacionale, bashkëpunimit me ekspertë të certifikimit dhe implementimit të politikave GDPR + PKI sipas standardeve ndërkombëtare. Monitorimi proaktiv i ndryshimeve ligjore dhe rregullative ndihmon në garantimin e përputhshmërisë së vazhdueshme të platformës.
+ 
+2.11 Rreziku reputacional
+2.11.1 Përshkrimi i këtij rreziku
+Ky rrezik lidhet me mundësinë që incidentet operacionale, mungesa e koordinimit ndërinstitucional, komunikimi i pamjaftueshëm, keqkuptimet nga përdoruesit ose perceptimet e gabuara publike të ndikojnë në imazhin e platformës dhe të institucioneve që e përdorin atë. Projekte të këtij formati, sidomos ato me ndikim kombëtar, janë veçanërisht të ndjeshme ndaj vlerësimit publik.
+ 
+2.11.2 Gjasa për ndodhjen e rrezikut
+Gjasa është mesatare, duke pasur parasysh se reputacioni mund të preket jo vetëm nga çështjet teknike, por edhe nga faktorë administrativë, institucionalë ose nga komunikimi joefektiv ndaj publikut.
+ 
+2.11.3 Ndikimi i rrezikut në projektin tonë
+Ndikimi mund të përfshijë ulje të besueshmërisë nga ana e universiteteve, studentëve, punëdhënësve dhe institucioneve të huaja. Perceptimet negative publike mund të ndikojnë në ritmin e adoptimit të platformës dhe në mbështetjen institucionale për fazat e ardhshme të projektit.
+ 
+2.11.4 Mënyra e trajtimit të rrezikut
+Rreziku menaxhohet përmes komunikimit të qartë dhe transparent, reagimit të shpejtë ndaj incidenteve, dokumentimit të procedurave operative, garantimit të cilësisë së shërbimit, si dhe bashkëpunimit të ngushtë ndërmjet MASHT-it, universiteteve dhe ekipit teknik. Publikimi i udhëzimeve zyrtare, raportimeve periodike dhe një plan i formalizuar i menaxhimit të incidenteve ndihmojnë në ruajtjen e besimit publik.
