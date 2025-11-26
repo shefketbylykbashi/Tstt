@@ -1,0 +1,294 @@
+Kostoja e përgjithshme e burimeve njerëzore
+Lead
+Ditë pune
+Kosto
+EMP-DX2
+303
+90,900.00 €
+EMP-SUP1
+335
+60,300.00 €
+EMP1
+114
+51,300.00 €
+EMP7
+135
+40,500.00 €
+EMP-SEC2
+76
+34,200.00 €
+EMP3
+85
+32,300.00 €
+Shefket
+92
+60,000.00 €
+EMP-BE4
+110
+26,400.00 €
+Arton
+50
+22,500.00 €
+EMP-BC1
+56
+19,600.00 €
+EMP5
+60
+18,000.00 €
+EMP-BE2
+50
+15,000.00 €
+EMP-BE3
+60
+14,400.00 €
+EMP4
+40
+14,000.00 €
+EMP2
+30
+13,500.00 €
+EMP-PM2
+52
+13,000.00 €
+EMP-SA2
+26
+11,700.00 €
+EMP-SUP2
+55
+9,900.00 €
+EMP-FE1
+30
+7,800.00 €
+EMP-QA2
+30
+6,600.00 €
+EMP-BE5
+33
+5,940.00 €
+EMP-FE3
+30
+5,400.00 €
+EMP-SM2
+20
+5,200.00 €
+EMP-QA3
+23
+4,600.00 €
+EMP-DX3
+15
+4,500.00 €
+EMP6
+15
+4,200.00 €
+Jon
+10
+4,000.00 €
+EMP-BC2
+18
+3,960.00 €
+EMP-SM1
+10
+2,600.00 €
+EMP-TR2
+10
+2,000.00 €
+EMP-PM3
+7
+1,750.00 €
+EMP-TR3
+5
+1,000.00 €
+Total
+ 
+607,050.00 €
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2. Kosto e Infrastrukturës Cloud
+2.1 Compute Layer
+Komponenti
+Kosto mujore
+Kosto 3 vjet
+3 × m5.large control plane
+300 €
+10,800 €
+8–12 worker nodes (m5.xlarge)
+1,400 €
+50,400 €
+Load balancers (ALB/NLB)
+250 €
+9,000 €
+Autoscaling buffer
+250 €
+9,000 €
+Total
+ 
+79,200 €
+2.2 Storage Layer
+Komponenti
+Kosto mujore
+Kosto 3 vjet
+S3 Standard (2–3 TB)
+120 €
+4,320 €
+S3 Glacier Deep Archive
+40 €
+1,440 €
+S3 Requests + Lifecycles
+40 €
+1,440 €
+IPFS Cluster (3 nodes EC2)
+350 €
+12,600 €
+Total
+ 
+19,800 €
+2.3 Database Layer
+Komponenti
+Kosto mujore
+3 vjet
+db.m5.large (master)
+260 €
+9,360 €
+Multi-AZ replica
+260 €
+9,360 €
+Backups
+50 €
+1,800 €
+Total
+ 
+20,520 €
+2.4 Network + Security Layer
+Komponenti
+Kosto mujore
+3 vjet
+NAT Gateways (3)
+270 €
+9,720 €
+VPC Traffic + ENIs
+120 €
+4,320 €
+AWS WAF
+120 €
+4,320 €
+API Gateway
+180 €
+6,480 €
+Total
+ 
+24,840 €
+Total  2.
+ 
+144,360 €
+ 
+ 
+3. Licenca, Tools & DevOps Platform
+Tool
+Kosto vjetore
+3 vjet
+Jira + Confluence
+4,200 €
+12,600 €
+GitHub Enterprise
+3,500 €
+10,500 €
+SonarQube
+2,000 €
+6,000 €
+Sentry + Logs
+1,200 €
+3,600 €
+SSL / Domain / DNS
+800 €
+2,400 €
+TestRail
+1,700 €
+5,100 €
+Total
+ 
+40,200 €
+ 
+ 
+4. Security, Compliance & Audit
+Nën-Kategoria
+Përshkrimi
+Kosto (€)
+ISO 27001 Certification
+Gap analysis, policies, controls
+40,000 €
+GDPR DPIA & Privacy Compliance
+DPIA, privacy workflows, data protection controls
+18,000 €
+Penetration Tests (3 rounds)
+App + API + Blockchain
+36,000 €
+Security Hardening & Blue Team Review
+Hardening i komponentëve + analizë defensive
+10,000 €
+EBSI Compliance + Trust Frameworks
+Pajtueshmëri EBSI, DID, VC trust frameworks
+12,000 €
+Total
+ 
+116,000 €
+ 
+ 
+5. Training, Pilot, Onboarding
+Aktiviteti
+Përshkrimi
+Kosto (€)
+Trajnim për stafin e universiteteve
+Trajnime teknike & operative
+20,000.00 €
+Materialet e kurseve
+Manuale, prezantime, video, udhëzime
+8,000.00 €
+Procesi sandbox
+Setup i sandbox + onboarding
+12,000.00 €
+3 × workshop-e pilot
+Workshop-e integrimi & feedback
+7,000.00 €
+Support gjatë test-pilotit
+Mbështetje teknike
+3,000.00 €
+Total
+ 
+50,000.00 €
+ 
+ 
+6. Project Overhead
+Komunikime
+Email, domain, kanale komunikimi
+3,000.00 €
+Transport
+Udhëtime te MASHT / universitetet
+4,000.00 €
+Takime & workshop-e
+Takime zyrtare, seanca planifikimi
+3,000.00 €
+Dokumentacion shtesë
+Raporte, përkthime, prezantime
+5,000.00 €
+Total
+ 
+15,000.00 €
+ 
+ 
+7. Contingency
+Elementi
+Përshkrimi
+Kosto (€)
+Contingency 10%
+Rezervë për rreziqe, vonesa, ndryshime teknike
+110,000.00 €
+ 
+ 
+Totali Buxheti (1,2,3,4,5,6,7)
+ 
+1,082,610.00 €
