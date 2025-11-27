@@ -1,0 +1,23 @@
+{
+  "scheduled_programs": [
+    {
+      "program_id": "NVuQACT3uyI_0",
+      "channel_id": 24,
+      "start": 1395,
+      "end": 1445
+    },
+    {
+      "program_id": "_sXT-CHVXdE_1",
+      "channel_id": 16,
+      "start": 1567,
+      "end": 1698
+    },
+    {
+      "program_id": "-J3408UVBU4_2",
+      "channel_id": 21,
+      "start": 1756,
+      "end": 1926
+    }
+  ],
+  "total_score": 288
+}

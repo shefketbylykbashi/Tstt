@@ -1,0 +1,2864 @@
+{
+  "opening_time": 420,
+  "closing_time": 1380,
+  "min_duration": 30,
+  "max_consecutive_genre": 2,
+  "channels_count": 40,
+  "switch_penalty": 3,
+  "termination_penalty": 15,
+  "priority_blocks": [
+    {
+      "start": 480,
+      "end": 570,
+      "allowed_channels": [
+        33,
+        35,
+        25
+      ]
+    },
+    {
+      "start": 1140,
+      "end": 1380,
+      "allowed_channels": [
+        1,
+        22,
+        7,
+        11,
+        14,
+        26,
+        13,
+        36,
+        8,
+        25,
+        20,
+        31
+      ]
+    }
+  ],
+  "time_preferences": [
+    {
+      "start": 420,
+      "end": 612,
+      "preferred_genre": "news",
+      "bonus": 30
+    },
+    {
+      "start": 612,
+      "end": 804,
+      "preferred_genre": "talk",
+      "bonus": 20
+    },
+    {
+      "start": 804,
+      "end": 996,
+      "preferred_genre": "drama",
+      "bonus": 25
+    },
+    {
+      "start": 996,
+      "end": 1188,
+      "preferred_genre": "movie",
+      "bonus": 40
+    },
+    {
+      "start": 1188,
+      "end": 1380,
+      "preferred_genre": "music",
+      "bonus": 15
+    }
+  ],
+  "channels": [
+    {
+      "channel_id": 0,
+      "channel_name": "News18 India",
+      "programs": [
+        {
+          "program_id": "6LMeWlRN5Dg_0",
+          "start": 420,
+          "end": 563,
+          "genre": "news",
+          "score": 62,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_1",
+          "start": 563,
+          "end": 607,
+          "genre": "variety",
+          "score": 52,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_2",
+          "start": 607,
+          "end": 779,
+          "genre": "variety",
+          "score": 68,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_3",
+          "start": 779,
+          "end": 897,
+          "genre": "news",
+          "score": 32,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_4",
+          "start": 897,
+          "end": 995,
+          "genre": "variety",
+          "score": 59,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_5",
+          "start": 995,
+          "end": 1164,
+          "genre": "variety",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_6",
+          "start": 1164,
+          "end": 1236,
+          "genre": "variety",
+          "score": 35,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_7",
+          "start": 1236,
+          "end": 1309,
+          "genre": "sports",
+          "score": 39,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        },
+        {
+          "program_id": "6LMeWlRN5Dg_8",
+          "start": 1309,
+          "end": 1380,
+          "genre": "variety",
+          "score": 77,
+          "link": "https://www.youtube.com/watch?v=6LMeWlRN5Dg"
+        }
+      ]
+    },
+    {
+      "channel_id": 1,
+      "channel_name": "Aaj Tak",
+      "programs": [
+        {
+          "program_id": "mudGscWYLVI_0",
+          "start": 420,
+          "end": 568,
+          "genre": "variety",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        },
+        {
+          "program_id": "mudGscWYLVI_1",
+          "start": 568,
+          "end": 682,
+          "genre": "gaming",
+          "score": 85,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        },
+        {
+          "program_id": "mudGscWYLVI_2",
+          "start": 682,
+          "end": 837,
+          "genre": "variety",
+          "score": 57,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        },
+        {
+          "program_id": "mudGscWYLVI_3",
+          "start": 837,
+          "end": 913,
+          "genre": "variety",
+          "score": 37,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        },
+        {
+          "program_id": "mudGscWYLVI_4",
+          "start": 913,
+          "end": 1082,
+          "genre": "gaming",
+          "score": 59,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        },
+        {
+          "program_id": "mudGscWYLVI_5",
+          "start": 1082,
+          "end": 1252,
+          "genre": "variety",
+          "score": 99,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        },
+        {
+          "program_id": "mudGscWYLVI_6",
+          "start": 1252,
+          "end": 1347,
+          "genre": "variety",
+          "score": 42,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        },
+        {
+          "program_id": "mudGscWYLVI_7",
+          "start": 1347,
+          "end": 1380,
+          "genre": "kids",
+          "score": 99,
+          "link": "https://www.youtube.com/watch?v=mudGscWYLVI"
+        }
+      ]
+    },
+    {
+      "channel_id": 2,
+      "channel_name": "Aaj Tak",
+      "programs": [
+        {
+          "program_id": "cYDfL17gr3k_0",
+          "start": 420,
+          "end": 559,
+          "genre": "variety",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        },
+        {
+          "program_id": "cYDfL17gr3k_1",
+          "start": 559,
+          "end": 720,
+          "genre": "variety",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        },
+        {
+          "program_id": "cYDfL17gr3k_2",
+          "start": 720,
+          "end": 876,
+          "genre": "variety",
+          "score": 75,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        },
+        {
+          "program_id": "cYDfL17gr3k_3",
+          "start": 876,
+          "end": 970,
+          "genre": "news",
+          "score": 36,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        },
+        {
+          "program_id": "cYDfL17gr3k_4",
+          "start": 970,
+          "end": 1043,
+          "genre": "variety",
+          "score": 37,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        },
+        {
+          "program_id": "cYDfL17gr3k_5",
+          "start": 1043,
+          "end": 1214,
+          "genre": "sports",
+          "score": 40,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        },
+        {
+          "program_id": "cYDfL17gr3k_6",
+          "start": 1214,
+          "end": 1329,
+          "genre": "variety",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        },
+        {
+          "program_id": "cYDfL17gr3k_7",
+          "start": 1329,
+          "end": 1380,
+          "genre": "variety",
+          "score": 50,
+          "link": "https://www.youtube.com/watch?v=cYDfL17gr3k"
+        }
+      ]
+    },
+    {
+      "channel_id": 3,
+      "channel_name": "Football Gamer Rony",
+      "programs": [
+        {
+          "program_id": "3i9m0fbCmkw_0",
+          "start": 420,
+          "end": 562,
+          "genre": "sports",
+          "score": 83,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        },
+        {
+          "program_id": "3i9m0fbCmkw_1",
+          "start": 562,
+          "end": 735,
+          "genre": "gaming",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        },
+        {
+          "program_id": "3i9m0fbCmkw_2",
+          "start": 735,
+          "end": 846,
+          "genre": "gaming",
+          "score": 97,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        },
+        {
+          "program_id": "3i9m0fbCmkw_3",
+          "start": 846,
+          "end": 955,
+          "genre": "drama",
+          "score": 94,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        },
+        {
+          "program_id": "3i9m0fbCmkw_4",
+          "start": 955,
+          "end": 1057,
+          "genre": "gaming",
+          "score": 92,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        },
+        {
+          "program_id": "3i9m0fbCmkw_5",
+          "start": 1057,
+          "end": 1167,
+          "genre": "gaming",
+          "score": 91,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        },
+        {
+          "program_id": "3i9m0fbCmkw_6",
+          "start": 1167,
+          "end": 1283,
+          "genre": "drama",
+          "score": 97,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        },
+        {
+          "program_id": "3i9m0fbCmkw_7",
+          "start": 1283,
+          "end": 1380,
+          "genre": "tech",
+          "score": 98,
+          "link": "https://www.youtube.com/watch?v=3i9m0fbCmkw"
+        }
+      ]
+    },
+    {
+      "channel_id": 4,
+      "channel_name": "\u0627\u0644\u0642\u0631\u0622\u0646_\u0627\u0644\u0643\u0631\u064A\u0645 AlQuranHD",
+      "programs": [
+        {
+          "program_id": "YUPLTrBrLuo_0",
+          "start": 420,
+          "end": 480,
+          "genre": "variety",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_1",
+          "start": 480,
+          "end": 617,
+          "genre": "music",
+          "score": 36,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_2",
+          "start": 617,
+          "end": 718,
+          "genre": "variety",
+          "score": 81,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_3",
+          "start": 718,
+          "end": 837,
+          "genre": "variety",
+          "score": 70,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_4",
+          "start": 837,
+          "end": 972,
+          "genre": "variety",
+          "score": 56,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_5",
+          "start": 972,
+          "end": 1111,
+          "genre": "movie",
+          "score": 64,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_6",
+          "start": 1111,
+          "end": 1207,
+          "genre": "variety",
+          "score": 31,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_7",
+          "start": 1207,
+          "end": 1329,
+          "genre": "variety",
+          "score": 50,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        },
+        {
+          "program_id": "YUPLTrBrLuo_8",
+          "start": 1329,
+          "end": 1380,
+          "genre": "variety",
+          "score": 53,
+          "link": "https://www.youtube.com/watch?v=YUPLTrBrLuo"
+        }
+      ]
+    },
+    {
+      "channel_id": 5,
+      "channel_name": "NDTV India",
+      "programs": [
+        {
+          "program_id": "RN9hqOXXK7c_0",
+          "start": 420,
+          "end": 569,
+          "genre": "variety",
+          "score": 79,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        },
+        {
+          "program_id": "RN9hqOXXK7c_1",
+          "start": 569,
+          "end": 645,
+          "genre": "variety",
+          "score": 75,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        },
+        {
+          "program_id": "RN9hqOXXK7c_2",
+          "start": 645,
+          "end": 789,
+          "genre": "variety",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        },
+        {
+          "program_id": "RN9hqOXXK7c_3",
+          "start": 789,
+          "end": 954,
+          "genre": "variety",
+          "score": 41,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        },
+        {
+          "program_id": "RN9hqOXXK7c_4",
+          "start": 954,
+          "end": 1079,
+          "genre": "variety",
+          "score": 85,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        },
+        {
+          "program_id": "RN9hqOXXK7c_5",
+          "start": 1079,
+          "end": 1217,
+          "genre": "variety",
+          "score": 56,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        },
+        {
+          "program_id": "RN9hqOXXK7c_6",
+          "start": 1217,
+          "end": 1292,
+          "genre": "variety",
+          "score": 46,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        },
+        {
+          "program_id": "RN9hqOXXK7c_7",
+          "start": 1292,
+          "end": 1380,
+          "genre": "variety",
+          "score": 66,
+          "link": "https://www.youtube.com/watch?v=RN9hqOXXK7c"
+        }
+      ]
+    },
+    {
+      "channel_id": 6,
+      "channel_name": "News 24",
+      "programs": [
+        {
+          "program_id": "idcaUzeqqhY_0",
+          "start": 420,
+          "end": 598,
+          "genre": "news",
+          "score": 69,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        },
+        {
+          "program_id": "idcaUzeqqhY_1",
+          "start": 598,
+          "end": 727,
+          "genre": "news",
+          "score": 99,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        },
+        {
+          "program_id": "idcaUzeqqhY_2",
+          "start": 727,
+          "end": 874,
+          "genre": "tech",
+          "score": 49,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        },
+        {
+          "program_id": "idcaUzeqqhY_3",
+          "start": 874,
+          "end": 999,
+          "genre": "news",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        },
+        {
+          "program_id": "idcaUzeqqhY_4",
+          "start": 999,
+          "end": 1153,
+          "genre": "news",
+          "score": 32,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        },
+        {
+          "program_id": "idcaUzeqqhY_5",
+          "start": 1153,
+          "end": 1302,
+          "genre": "news",
+          "score": 69,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        },
+        {
+          "program_id": "idcaUzeqqhY_6",
+          "start": 1302,
+          "end": 1347,
+          "genre": "news",
+          "score": 75,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        },
+        {
+          "program_id": "idcaUzeqqhY_7",
+          "start": 1347,
+          "end": 1380,
+          "genre": "news",
+          "score": 31,
+          "link": "https://www.youtube.com/watch?v=idcaUzeqqhY"
+        }
+      ]
+    },
+    {
+      "channel_id": 7,
+      "channel_name": "ABP NEWS",
+      "programs": [
+        {
+          "program_id": "YPBT5dj5sWM_0",
+          "start": 420,
+          "end": 579,
+          "genre": "variety",
+          "score": 69,
+          "link": "https://www.youtube.com/watch?v=YPBT5dj5sWM"
+        },
+        {
+          "program_id": "YPBT5dj5sWM_1",
+          "start": 579,
+          "end": 640,
+          "genre": "drama",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=YPBT5dj5sWM"
+        },
+        {
+          "program_id": "YPBT5dj5sWM_2",
+          "start": 640,
+          "end": 803,
+          "genre": "talk",
+          "score": 37,
+          "link": "https://www.youtube.com/watch?v=YPBT5dj5sWM"
+        },
+        {
+          "program_id": "YPBT5dj5sWM_3",
+          "start": 803,
+          "end": 968,
+          "genre": "variety",
+          "score": 88,
+          "link": "https://www.youtube.com/watch?v=YPBT5dj5sWM"
+        },
+        {
+          "program_id": "YPBT5dj5sWM_4",
+          "start": 968,
+          "end": 1124,
+          "genre": "variety",
+          "score": 58,
+          "link": "https://www.youtube.com/watch?v=YPBT5dj5sWM"
+        },
+        {
+          "program_id": "YPBT5dj5sWM_5",
+          "start": 1124,
+          "end": 1234,
+          "genre": "variety",
+          "score": 59,
+          "link": "https://www.youtube.com/watch?v=YPBT5dj5sWM"
+        },
+        {
+          "program_id": "YPBT5dj5sWM_6",
+          "start": 1234,
+          "end": 1380,
+          "genre": "variety",
+          "score": 58,
+          "link": "https://www.youtube.com/watch?v=YPBT5dj5sWM"
+        }
+      ]
+    },
+    {
+      "channel_id": 8,
+      "channel_name": "News18 India",
+      "programs": [
+        {
+          "program_id": "_ZrMq-va5-Y_0",
+          "start": 420,
+          "end": 588,
+          "genre": "variety",
+          "score": 50,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        },
+        {
+          "program_id": "_ZrMq-va5-Y_1",
+          "start": 588,
+          "end": 708,
+          "genre": "variety",
+          "score": 83,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        },
+        {
+          "program_id": "_ZrMq-va5-Y_2",
+          "start": 708,
+          "end": 881,
+          "genre": "variety",
+          "score": 73,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        },
+        {
+          "program_id": "_ZrMq-va5-Y_3",
+          "start": 881,
+          "end": 951,
+          "genre": "variety",
+          "score": 74,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        },
+        {
+          "program_id": "_ZrMq-va5-Y_4",
+          "start": 951,
+          "end": 1102,
+          "genre": "tech",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        },
+        {
+          "program_id": "_ZrMq-va5-Y_5",
+          "start": 1102,
+          "end": 1245,
+          "genre": "variety",
+          "score": 74,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        },
+        {
+          "program_id": "_ZrMq-va5-Y_6",
+          "start": 1245,
+          "end": 1348,
+          "genre": "movie",
+          "score": 75,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        },
+        {
+          "program_id": "_ZrMq-va5-Y_7",
+          "start": 1348,
+          "end": 1380,
+          "genre": "variety",
+          "score": 63,
+          "link": "https://www.youtube.com/watch?v=_ZrMq-va5-Y"
+        }
+      ]
+    },
+    {
+      "channel_id": 9,
+      "channel_name": "News18 Lokmat",
+      "programs": [
+        {
+          "program_id": "aAYo4324TQY_0",
+          "start": 420,
+          "end": 494,
+          "genre": "news",
+          "score": 91,
+          "link": "https://www.youtube.com/watch?v=aAYo4324TQY"
+        },
+        {
+          "program_id": "aAYo4324TQY_1",
+          "start": 494,
+          "end": 585,
+          "genre": "music",
+          "score": 93,
+          "link": "https://www.youtube.com/watch?v=aAYo4324TQY"
+        },
+        {
+          "program_id": "aAYo4324TQY_2",
+          "start": 585,
+          "end": 718,
+          "genre": "sports",
+          "score": 96,
+          "link": "https://www.youtube.com/watch?v=aAYo4324TQY"
+        },
+        {
+          "program_id": "aAYo4324TQY_3",
+          "start": 718,
+          "end": 895,
+          "genre": "kids",
+          "score": 91,
+          "link": "https://www.youtube.com/watch?v=aAYo4324TQY"
+        },
+        {
+          "program_id": "aAYo4324TQY_4",
+          "start": 895,
+          "end": 1070,
+          "genre": "news",
+          "score": 49,
+          "link": "https://www.youtube.com/watch?v=aAYo4324TQY"
+        },
+        {
+          "program_id": "aAYo4324TQY_5",
+          "start": 1070,
+          "end": 1245,
+          "genre": "news",
+          "score": 87,
+          "link": "https://www.youtube.com/watch?v=aAYo4324TQY"
+        },
+        {
+          "program_id": "aAYo4324TQY_6",
+          "start": 1245,
+          "end": 1380,
+          "genre": "tech",
+          "score": 86,
+          "link": "https://www.youtube.com/watch?v=aAYo4324TQY"
+        }
+      ]
+    },
+    {
+      "channel_id": 10,
+      "channel_name": "Ian Alleyne Network",
+      "programs": [
+        {
+          "program_id": "w1gDVgEh61A_0",
+          "start": 420,
+          "end": 592,
+          "genre": "variety",
+          "score": 43,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        },
+        {
+          "program_id": "w1gDVgEh61A_1",
+          "start": 592,
+          "end": 724,
+          "genre": "music",
+          "score": 96,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        },
+        {
+          "program_id": "w1gDVgEh61A_2",
+          "start": 724,
+          "end": 891,
+          "genre": "variety",
+          "score": 88,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        },
+        {
+          "program_id": "w1gDVgEh61A_3",
+          "start": 891,
+          "end": 967,
+          "genre": "variety",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        },
+        {
+          "program_id": "w1gDVgEh61A_4",
+          "start": 967,
+          "end": 1053,
+          "genre": "documentary",
+          "score": 32,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        },
+        {
+          "program_id": "w1gDVgEh61A_5",
+          "start": 1053,
+          "end": 1204,
+          "genre": "variety",
+          "score": 40,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        },
+        {
+          "program_id": "w1gDVgEh61A_6",
+          "start": 1204,
+          "end": 1326,
+          "genre": "variety",
+          "score": 37,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        },
+        {
+          "program_id": "w1gDVgEh61A_7",
+          "start": 1326,
+          "end": 1380,
+          "genre": "music",
+          "score": 48,
+          "link": "https://www.youtube.com/watch?v=w1gDVgEh61A"
+        }
+      ]
+    },
+    {
+      "channel_id": 11,
+      "channel_name": "Republic Bharat",
+      "programs": [
+        {
+          "program_id": "xEYGgVWA_3Q_0",
+          "start": 420,
+          "end": 555,
+          "genre": "news",
+          "score": 92,
+          "link": "https://www.youtube.com/watch?v=xEYGgVWA_3Q"
+        },
+        {
+          "program_id": "xEYGgVWA_3Q_1",
+          "start": 555,
+          "end": 729,
+          "genre": "news",
+          "score": 31,
+          "link": "https://www.youtube.com/watch?v=xEYGgVWA_3Q"
+        },
+        {
+          "program_id": "xEYGgVWA_3Q_2",
+          "start": 729,
+          "end": 853,
+          "genre": "tech",
+          "score": 46,
+          "link": "https://www.youtube.com/watch?v=xEYGgVWA_3Q"
+        },
+        {
+          "program_id": "xEYGgVWA_3Q_3",
+          "start": 853,
+          "end": 997,
+          "genre": "news",
+          "score": 58,
+          "link": "https://www.youtube.com/watch?v=xEYGgVWA_3Q"
+        },
+        {
+          "program_id": "xEYGgVWA_3Q_4",
+          "start": 997,
+          "end": 1105,
+          "genre": "news",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=xEYGgVWA_3Q"
+        },
+        {
+          "program_id": "xEYGgVWA_3Q_5",
+          "start": 1105,
+          "end": 1228,
+          "genre": "news",
+          "score": 44,
+          "link": "https://www.youtube.com/watch?v=xEYGgVWA_3Q"
+        },
+        {
+          "program_id": "xEYGgVWA_3Q_6",
+          "start": 1228,
+          "end": 1380,
+          "genre": "news",
+          "score": 41,
+          "link": "https://www.youtube.com/watch?v=xEYGgVWA_3Q"
+        }
+      ]
+    },
+    {
+      "channel_id": 12,
+      "channel_name": "Republic Bharat",
+      "programs": [
+        {
+          "program_id": "WJUg7d8cnzY_0",
+          "start": 420,
+          "end": 530,
+          "genre": "drama",
+          "score": 63,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        },
+        {
+          "program_id": "WJUg7d8cnzY_1",
+          "start": 530,
+          "end": 638,
+          "genre": "gaming",
+          "score": 35,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        },
+        {
+          "program_id": "WJUg7d8cnzY_2",
+          "start": 638,
+          "end": 738,
+          "genre": "drama",
+          "score": 100,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        },
+        {
+          "program_id": "WJUg7d8cnzY_3",
+          "start": 738,
+          "end": 836,
+          "genre": "music",
+          "score": 54,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        },
+        {
+          "program_id": "WJUg7d8cnzY_4",
+          "start": 836,
+          "end": 1004,
+          "genre": "news",
+          "score": 89,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        },
+        {
+          "program_id": "WJUg7d8cnzY_5",
+          "start": 1004,
+          "end": 1142,
+          "genre": "news",
+          "score": 97,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        },
+        {
+          "program_id": "WJUg7d8cnzY_6",
+          "start": 1142,
+          "end": 1319,
+          "genre": "gaming",
+          "score": 77,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        },
+        {
+          "program_id": "WJUg7d8cnzY_7",
+          "start": 1319,
+          "end": 1380,
+          "genre": "news",
+          "score": 96,
+          "link": "https://www.youtube.com/watch?v=WJUg7d8cnzY"
+        }
+      ]
+    },
+    {
+      "channel_id": 13,
+      "channel_name": "Zee News",
+      "programs": [
+        {
+          "program_id": "kHDQ08Eaazg_0",
+          "start": 420,
+          "end": 507,
+          "genre": "news",
+          "score": 35,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_1",
+          "start": 507,
+          "end": 643,
+          "genre": "news",
+          "score": 91,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_2",
+          "start": 643,
+          "end": 813,
+          "genre": "news",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_3",
+          "start": 813,
+          "end": 926,
+          "genre": "sports",
+          "score": 42,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_4",
+          "start": 926,
+          "end": 991,
+          "genre": "news",
+          "score": 68,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_5",
+          "start": 991,
+          "end": 1156,
+          "genre": "gaming",
+          "score": 65,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_6",
+          "start": 1156,
+          "end": 1264,
+          "genre": "news",
+          "score": 90,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_7",
+          "start": 1264,
+          "end": 1325,
+          "genre": "documentary",
+          "score": 88,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        },
+        {
+          "program_id": "kHDQ08Eaazg_8",
+          "start": 1325,
+          "end": 1380,
+          "genre": "news",
+          "score": 45,
+          "link": "https://www.youtube.com/watch?v=kHDQ08Eaazg"
+        }
+      ]
+    },
+    {
+      "channel_id": 14,
+      "channel_name": "Aaj Tak",
+      "programs": [
+        {
+          "program_id": "mNUz1skJdzs_0",
+          "start": 420,
+          "end": 555,
+          "genre": "news",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=mNUz1skJdzs"
+        },
+        {
+          "program_id": "mNUz1skJdzs_1",
+          "start": 555,
+          "end": 719,
+          "genre": "news",
+          "score": 70,
+          "link": "https://www.youtube.com/watch?v=mNUz1skJdzs"
+        },
+        {
+          "program_id": "mNUz1skJdzs_2",
+          "start": 719,
+          "end": 879,
+          "genre": "news",
+          "score": 95,
+          "link": "https://www.youtube.com/watch?v=mNUz1skJdzs"
+        },
+        {
+          "program_id": "mNUz1skJdzs_3",
+          "start": 879,
+          "end": 1053,
+          "genre": "news",
+          "score": 67,
+          "link": "https://www.youtube.com/watch?v=mNUz1skJdzs"
+        },
+        {
+          "program_id": "mNUz1skJdzs_4",
+          "start": 1053,
+          "end": 1211,
+          "genre": "documentary",
+          "score": 86,
+          "link": "https://www.youtube.com/watch?v=mNUz1skJdzs"
+        },
+        {
+          "program_id": "mNUz1skJdzs_5",
+          "start": 1211,
+          "end": 1308,
+          "genre": "news",
+          "score": 80,
+          "link": "https://www.youtube.com/watch?v=mNUz1skJdzs"
+        },
+        {
+          "program_id": "mNUz1skJdzs_6",
+          "start": 1308,
+          "end": 1380,
+          "genre": "news",
+          "score": 63,
+          "link": "https://www.youtube.com/watch?v=mNUz1skJdzs"
+        }
+      ]
+    },
+    {
+      "channel_id": 15,
+      "channel_name": "Zee News",
+      "programs": [
+        {
+          "program_id": "4KmMKuACRGI_0",
+          "start": 420,
+          "end": 585,
+          "genre": "news",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_1",
+          "start": 585,
+          "end": 698,
+          "genre": "documentary",
+          "score": 52,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_2",
+          "start": 698,
+          "end": 772,
+          "genre": "news",
+          "score": 85,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_3",
+          "start": 772,
+          "end": 891,
+          "genre": "variety",
+          "score": 35,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_4",
+          "start": 891,
+          "end": 1007,
+          "genre": "news",
+          "score": 79,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_5",
+          "start": 1007,
+          "end": 1159,
+          "genre": "news",
+          "score": 98,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_6",
+          "start": 1159,
+          "end": 1266,
+          "genre": "news",
+          "score": 44,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_7",
+          "start": 1266,
+          "end": 1334,
+          "genre": "news",
+          "score": 75,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        },
+        {
+          "program_id": "4KmMKuACRGI_8",
+          "start": 1334,
+          "end": 1380,
+          "genre": "music",
+          "score": 99,
+          "link": "https://www.youtube.com/watch?v=4KmMKuACRGI"
+        }
+      ]
+    },
+    {
+      "channel_id": 16,
+      "channel_name": "Republic Bharat",
+      "programs": [
+        {
+          "program_id": "SG4hYEx_OEg_0",
+          "start": 420,
+          "end": 520,
+          "genre": "kids",
+          "score": 47,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_1",
+          "start": 520,
+          "end": 585,
+          "genre": "variety",
+          "score": 71,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_2",
+          "start": 585,
+          "end": 754,
+          "genre": "variety",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_3",
+          "start": 754,
+          "end": 867,
+          "genre": "variety",
+          "score": 35,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_4",
+          "start": 867,
+          "end": 1034,
+          "genre": "music",
+          "score": 70,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_5",
+          "start": 1034,
+          "end": 1197,
+          "genre": "variety",
+          "score": 75,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_6",
+          "start": 1197,
+          "end": 1265,
+          "genre": "variety",
+          "score": 97,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_7",
+          "start": 1265,
+          "end": 1336,
+          "genre": "variety",
+          "score": 64,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        },
+        {
+          "program_id": "SG4hYEx_OEg_8",
+          "start": 1336,
+          "end": 1380,
+          "genre": "variety",
+          "score": 86,
+          "link": "https://www.youtube.com/watch?v=SG4hYEx_OEg"
+        }
+      ]
+    },
+    {
+      "channel_id": 17,
+      "channel_name": "IndiaTV",
+      "programs": [
+        {
+          "program_id": "qOoa5y4v2_M_0",
+          "start": 420,
+          "end": 579,
+          "genre": "news",
+          "score": 80,
+          "link": "https://www.youtube.com/watch?v=qOoa5y4v2_M"
+        },
+        {
+          "program_id": "qOoa5y4v2_M_1",
+          "start": 579,
+          "end": 667,
+          "genre": "drama",
+          "score": 39,
+          "link": "https://www.youtube.com/watch?v=qOoa5y4v2_M"
+        },
+        {
+          "program_id": "qOoa5y4v2_M_2",
+          "start": 667,
+          "end": 808,
+          "genre": "news",
+          "score": 52,
+          "link": "https://www.youtube.com/watch?v=qOoa5y4v2_M"
+        },
+        {
+          "program_id": "qOoa5y4v2_M_3",
+          "start": 808,
+          "end": 966,
+          "genre": "news",
+          "score": 39,
+          "link": "https://www.youtube.com/watch?v=qOoa5y4v2_M"
+        },
+        {
+          "program_id": "qOoa5y4v2_M_4",
+          "start": 966,
+          "end": 1126,
+          "genre": "news",
+          "score": 71,
+          "link": "https://www.youtube.com/watch?v=qOoa5y4v2_M"
+        },
+        {
+          "program_id": "qOoa5y4v2_M_5",
+          "start": 1126,
+          "end": 1262,
+          "genre": "news",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=qOoa5y4v2_M"
+        },
+        {
+          "program_id": "qOoa5y4v2_M_6",
+          "start": 1262,
+          "end": 1380,
+          "genre": "news",
+          "score": 66,
+          "link": "https://www.youtube.com/watch?v=qOoa5y4v2_M"
+        }
+      ]
+    },
+    {
+      "channel_id": 18,
+      "channel_name": "India Today",
+      "programs": [
+        {
+          "program_id": "twJepHRkS3k_0",
+          "start": 420,
+          "end": 524,
+          "genre": "variety",
+          "score": 58,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        },
+        {
+          "program_id": "twJepHRkS3k_1",
+          "start": 524,
+          "end": 693,
+          "genre": "variety",
+          "score": 31,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        },
+        {
+          "program_id": "twJepHRkS3k_2",
+          "start": 693,
+          "end": 860,
+          "genre": "variety",
+          "score": 87,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        },
+        {
+          "program_id": "twJepHRkS3k_3",
+          "start": 860,
+          "end": 1000,
+          "genre": "variety",
+          "score": 51,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        },
+        {
+          "program_id": "twJepHRkS3k_4",
+          "start": 1000,
+          "end": 1154,
+          "genre": "variety",
+          "score": 37,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        },
+        {
+          "program_id": "twJepHRkS3k_5",
+          "start": 1154,
+          "end": 1247,
+          "genre": "variety",
+          "score": 44,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        },
+        {
+          "program_id": "twJepHRkS3k_6",
+          "start": 1247,
+          "end": 1308,
+          "genre": "variety",
+          "score": 36,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        },
+        {
+          "program_id": "twJepHRkS3k_7",
+          "start": 1308,
+          "end": 1380,
+          "genre": "variety",
+          "score": 100,
+          "link": "https://www.youtube.com/watch?v=twJepHRkS3k"
+        }
+      ]
+    },
+    {
+      "channel_id": 19,
+      "channel_name": "IndiaTV",
+      "programs": [
+        {
+          "program_id": "Q-LI4tzZX7U_0",
+          "start": 420,
+          "end": 540,
+          "genre": "news",
+          "score": 56,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        },
+        {
+          "program_id": "Q-LI4tzZX7U_1",
+          "start": 540,
+          "end": 712,
+          "genre": "news",
+          "score": 73,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        },
+        {
+          "program_id": "Q-LI4tzZX7U_2",
+          "start": 712,
+          "end": 805,
+          "genre": "news",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        },
+        {
+          "program_id": "Q-LI4tzZX7U_3",
+          "start": 805,
+          "end": 882,
+          "genre": "news",
+          "score": 82,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        },
+        {
+          "program_id": "Q-LI4tzZX7U_4",
+          "start": 882,
+          "end": 1031,
+          "genre": "news",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        },
+        {
+          "program_id": "Q-LI4tzZX7U_5",
+          "start": 1031,
+          "end": 1146,
+          "genre": "talk",
+          "score": 45,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        },
+        {
+          "program_id": "Q-LI4tzZX7U_6",
+          "start": 1146,
+          "end": 1305,
+          "genre": "news",
+          "score": 80,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        },
+        {
+          "program_id": "Q-LI4tzZX7U_7",
+          "start": 1305,
+          "end": 1380,
+          "genre": "news",
+          "score": 42,
+          "link": "https://www.youtube.com/watch?v=Q-LI4tzZX7U"
+        }
+      ]
+    },
+    {
+      "channel_id": 20,
+      "channel_name": "WION",
+      "programs": [
+        {
+          "program_id": "qeAZUXVD2D8_0",
+          "start": 420,
+          "end": 525,
+          "genre": "news",
+          "score": 64,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        },
+        {
+          "program_id": "qeAZUXVD2D8_1",
+          "start": 525,
+          "end": 646,
+          "genre": "variety",
+          "score": 58,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        },
+        {
+          "program_id": "qeAZUXVD2D8_2",
+          "start": 646,
+          "end": 796,
+          "genre": "talk",
+          "score": 46,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        },
+        {
+          "program_id": "qeAZUXVD2D8_3",
+          "start": 796,
+          "end": 955,
+          "genre": "variety",
+          "score": 38,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        },
+        {
+          "program_id": "qeAZUXVD2D8_4",
+          "start": 955,
+          "end": 1064,
+          "genre": "documentary",
+          "score": 43,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        },
+        {
+          "program_id": "qeAZUXVD2D8_5",
+          "start": 1064,
+          "end": 1210,
+          "genre": "variety",
+          "score": 61,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        },
+        {
+          "program_id": "qeAZUXVD2D8_6",
+          "start": 1210,
+          "end": 1278,
+          "genre": "variety",
+          "score": 85,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        },
+        {
+          "program_id": "qeAZUXVD2D8_7",
+          "start": 1278,
+          "end": 1380,
+          "genre": "documentary",
+          "score": 82,
+          "link": "https://www.youtube.com/watch?v=qeAZUXVD2D8"
+        }
+      ]
+    },
+    {
+      "channel_id": 21,
+      "channel_name": "AlMayadeen Live - \u0627\u0644\u0645\u064A\u0627\u062F\u064A\u0646 \u0645\u0628\u0627\u0634\u0631",
+      "programs": [
+        {
+          "program_id": "_sXT-CHVXdE_0",
+          "start": 420,
+          "end": 495,
+          "genre": "variety",
+          "score": 96,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        },
+        {
+          "program_id": "_sXT-CHVXdE_1",
+          "start": 495,
+          "end": 602,
+          "genre": "variety",
+          "score": 91,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        },
+        {
+          "program_id": "_sXT-CHVXdE_2",
+          "start": 602,
+          "end": 775,
+          "genre": "variety",
+          "score": 42,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        },
+        {
+          "program_id": "_sXT-CHVXdE_3",
+          "start": 775,
+          "end": 920,
+          "genre": "kids",
+          "score": 75,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        },
+        {
+          "program_id": "_sXT-CHVXdE_4",
+          "start": 920,
+          "end": 1082,
+          "genre": "kids",
+          "score": 45,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        },
+        {
+          "program_id": "_sXT-CHVXdE_5",
+          "start": 1082,
+          "end": 1257,
+          "genre": "variety",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        },
+        {
+          "program_id": "_sXT-CHVXdE_6",
+          "start": 1257,
+          "end": 1330,
+          "genre": "variety",
+          "score": 40,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        },
+        {
+          "program_id": "_sXT-CHVXdE_7",
+          "start": 1330,
+          "end": 1380,
+          "genre": "variety",
+          "score": 81,
+          "link": "https://www.youtube.com/watch?v=_sXT-CHVXdE"
+        }
+      ]
+    },
+    {
+      "channel_id": 22,
+      "channel_name": "Jeremy Frieser",
+      "programs": [
+        {
+          "program_id": "VPH3wfnZo64_0",
+          "start": 420,
+          "end": 499,
+          "genre": "gaming",
+          "score": 71,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_1",
+          "start": 499,
+          "end": 563,
+          "genre": "tech",
+          "score": 49,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_2",
+          "start": 563,
+          "end": 724,
+          "genre": "talk",
+          "score": 44,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_3",
+          "start": 724,
+          "end": 854,
+          "genre": "gaming",
+          "score": 55,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_4",
+          "start": 854,
+          "end": 938,
+          "genre": "kids",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_5",
+          "start": 938,
+          "end": 1058,
+          "genre": "gaming",
+          "score": 34,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_6",
+          "start": 1058,
+          "end": 1195,
+          "genre": "tech",
+          "score": 77,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_7",
+          "start": 1195,
+          "end": 1249,
+          "genre": "gaming",
+          "score": 50,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        },
+        {
+          "program_id": "VPH3wfnZo64_8",
+          "start": 1249,
+          "end": 1380,
+          "genre": "gaming",
+          "score": 52,
+          "link": "https://www.youtube.com/watch?v=VPH3wfnZo64"
+        }
+      ]
+    },
+    {
+      "channel_id": 23,
+      "channel_name": "CNBC Awaaz.",
+      "programs": [
+        {
+          "program_id": "JgBfReSuww0_0",
+          "start": 420,
+          "end": 540,
+          "genre": "news",
+          "score": 80,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        },
+        {
+          "program_id": "JgBfReSuww0_1",
+          "start": 540,
+          "end": 646,
+          "genre": "news",
+          "score": 89,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        },
+        {
+          "program_id": "JgBfReSuww0_2",
+          "start": 646,
+          "end": 759,
+          "genre": "news",
+          "score": 87,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        },
+        {
+          "program_id": "JgBfReSuww0_3",
+          "start": 759,
+          "end": 933,
+          "genre": "news",
+          "score": 40,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        },
+        {
+          "program_id": "JgBfReSuww0_4",
+          "start": 933,
+          "end": 1100,
+          "genre": "news",
+          "score": 61,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        },
+        {
+          "program_id": "JgBfReSuww0_5",
+          "start": 1100,
+          "end": 1264,
+          "genre": "music",
+          "score": 98,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        },
+        {
+          "program_id": "JgBfReSuww0_6",
+          "start": 1264,
+          "end": 1340,
+          "genre": "news",
+          "score": 46,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        },
+        {
+          "program_id": "JgBfReSuww0_7",
+          "start": 1340,
+          "end": 1380,
+          "genre": "news",
+          "score": 55,
+          "link": "https://www.youtube.com/watch?v=JgBfReSuww0"
+        }
+      ]
+    },
+    {
+      "channel_id": 24,
+      "channel_name": "Aaj Tak",
+      "programs": [
+        {
+          "program_id": "SByxmu32Js4_0",
+          "start": 420,
+          "end": 578,
+          "genre": "news",
+          "score": 79,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        },
+        {
+          "program_id": "SByxmu32Js4_1",
+          "start": 578,
+          "end": 709,
+          "genre": "music",
+          "score": 51,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        },
+        {
+          "program_id": "SByxmu32Js4_2",
+          "start": 709,
+          "end": 761,
+          "genre": "music",
+          "score": 84,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        },
+        {
+          "program_id": "SByxmu32Js4_3",
+          "start": 761,
+          "end": 934,
+          "genre": "kids",
+          "score": 45,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        },
+        {
+          "program_id": "SByxmu32Js4_4",
+          "start": 934,
+          "end": 1043,
+          "genre": "drama",
+          "score": 76,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        },
+        {
+          "program_id": "SByxmu32Js4_5",
+          "start": 1043,
+          "end": 1197,
+          "genre": "variety",
+          "score": 69,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        },
+        {
+          "program_id": "SByxmu32Js4_6",
+          "start": 1197,
+          "end": 1335,
+          "genre": "documentary",
+          "score": 37,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        },
+        {
+          "program_id": "SByxmu32Js4_7",
+          "start": 1335,
+          "end": 1380,
+          "genre": "variety",
+          "score": 63,
+          "link": "https://www.youtube.com/watch?v=SByxmu32Js4"
+        }
+      ]
+    },
+    {
+      "channel_id": 25,
+      "channel_name": "Aaj Tak",
+      "programs": [
+        {
+          "program_id": "_BWNTwHxhUY_0",
+          "start": 420,
+          "end": 574,
+          "genre": "variety",
+          "score": 33,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        },
+        {
+          "program_id": "_BWNTwHxhUY_1",
+          "start": 574,
+          "end": 648,
+          "genre": "variety",
+          "score": 51,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        },
+        {
+          "program_id": "_BWNTwHxhUY_2",
+          "start": 648,
+          "end": 740,
+          "genre": "variety",
+          "score": 59,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        },
+        {
+          "program_id": "_BWNTwHxhUY_3",
+          "start": 740,
+          "end": 875,
+          "genre": "variety",
+          "score": 59,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        },
+        {
+          "program_id": "_BWNTwHxhUY_4",
+          "start": 875,
+          "end": 987,
+          "genre": "variety",
+          "score": 67,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        },
+        {
+          "program_id": "_BWNTwHxhUY_5",
+          "start": 987,
+          "end": 1163,
+          "genre": "variety",
+          "score": 59,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        },
+        {
+          "program_id": "_BWNTwHxhUY_6",
+          "start": 1163,
+          "end": 1331,
+          "genre": "movie",
+          "score": 37,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        },
+        {
+          "program_id": "_BWNTwHxhUY_7",
+          "start": 1331,
+          "end": 1380,
+          "genre": "variety",
+          "score": 94,
+          "link": "https://www.youtube.com/watch?v=_BWNTwHxhUY"
+        }
+      ]
+    },
+    {
+      "channel_id": 26,
+      "channel_name": "News18 Bihar Jharkhand",
+      "programs": [
+        {
+          "program_id": "5eAGEGZsaCE_0",
+          "start": 420,
+          "end": 526,
+          "genre": "movie",
+          "score": 44,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        },
+        {
+          "program_id": "5eAGEGZsaCE_1",
+          "start": 526,
+          "end": 663,
+          "genre": "news",
+          "score": 48,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        },
+        {
+          "program_id": "5eAGEGZsaCE_2",
+          "start": 663,
+          "end": 804,
+          "genre": "documentary",
+          "score": 81,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        },
+        {
+          "program_id": "5eAGEGZsaCE_3",
+          "start": 804,
+          "end": 978,
+          "genre": "news",
+          "score": 69,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        },
+        {
+          "program_id": "5eAGEGZsaCE_4",
+          "start": 978,
+          "end": 1086,
+          "genre": "news",
+          "score": 79,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        },
+        {
+          "program_id": "5eAGEGZsaCE_5",
+          "start": 1086,
+          "end": 1190,
+          "genre": "news",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        },
+        {
+          "program_id": "5eAGEGZsaCE_6",
+          "start": 1190,
+          "end": 1303,
+          "genre": "news",
+          "score": 32,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        },
+        {
+          "program_id": "5eAGEGZsaCE_7",
+          "start": 1303,
+          "end": 1380,
+          "genre": "variety",
+          "score": 73,
+          "link": "https://www.youtube.com/watch?v=5eAGEGZsaCE"
+        }
+      ]
+    },
+    {
+      "channel_id": 27,
+      "channel_name": "Republic Bharat",
+      "programs": [
+        {
+          "program_id": "HtHKvA7fXgs_0",
+          "start": 420,
+          "end": 478,
+          "genre": "gaming",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_1",
+          "start": 478,
+          "end": 588,
+          "genre": "news",
+          "score": 95,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_2",
+          "start": 588,
+          "end": 658,
+          "genre": "news",
+          "score": 81,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_3",
+          "start": 658,
+          "end": 760,
+          "genre": "news",
+          "score": 41,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_4",
+          "start": 760,
+          "end": 901,
+          "genre": "news",
+          "score": 47,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_5",
+          "start": 901,
+          "end": 998,
+          "genre": "news",
+          "score": 49,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_6",
+          "start": 998,
+          "end": 1120,
+          "genre": "drama",
+          "score": 59,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_7",
+          "start": 1120,
+          "end": 1199,
+          "genre": "news",
+          "score": 98,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_8",
+          "start": 1199,
+          "end": 1275,
+          "genre": "news",
+          "score": 43,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        },
+        {
+          "program_id": "HtHKvA7fXgs_9",
+          "start": 1275,
+          "end": 1380,
+          "genre": "drama",
+          "score": 51,
+          "link": "https://www.youtube.com/watch?v=HtHKvA7fXgs"
+        }
+      ]
+    },
+    {
+      "channel_id": 28,
+      "channel_name": "Zee News",
+      "programs": [
+        {
+          "program_id": "rb-a3p_7LNo_0",
+          "start": 420,
+          "end": 553,
+          "genre": "variety",
+          "score": 71,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        },
+        {
+          "program_id": "rb-a3p_7LNo_1",
+          "start": 553,
+          "end": 719,
+          "genre": "variety",
+          "score": 33,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        },
+        {
+          "program_id": "rb-a3p_7LNo_2",
+          "start": 719,
+          "end": 868,
+          "genre": "variety",
+          "score": 84,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        },
+        {
+          "program_id": "rb-a3p_7LNo_3",
+          "start": 868,
+          "end": 1001,
+          "genre": "variety",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        },
+        {
+          "program_id": "rb-a3p_7LNo_4",
+          "start": 1001,
+          "end": 1157,
+          "genre": "music",
+          "score": 95,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        },
+        {
+          "program_id": "rb-a3p_7LNo_5",
+          "start": 1157,
+          "end": 1221,
+          "genre": "variety",
+          "score": 68,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        },
+        {
+          "program_id": "rb-a3p_7LNo_6",
+          "start": 1221,
+          "end": 1345,
+          "genre": "variety",
+          "score": 32,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        },
+        {
+          "program_id": "rb-a3p_7LNo_7",
+          "start": 1345,
+          "end": 1380,
+          "genre": "kids",
+          "score": 56,
+          "link": "https://www.youtube.com/watch?v=rb-a3p_7LNo"
+        }
+      ]
+    },
+    {
+      "channel_id": 29,
+      "channel_name": "News18 Bangla",
+      "programs": [
+        {
+          "program_id": "gC2UoSJtSeM_0",
+          "start": 420,
+          "end": 525,
+          "genre": "sports",
+          "score": 64,
+          "link": "https://www.youtube.com/watch?v=gC2UoSJtSeM"
+        },
+        {
+          "program_id": "gC2UoSJtSeM_1",
+          "start": 525,
+          "end": 697,
+          "genre": "drama",
+          "score": 67,
+          "link": "https://www.youtube.com/watch?v=gC2UoSJtSeM"
+        },
+        {
+          "program_id": "gC2UoSJtSeM_2",
+          "start": 697,
+          "end": 828,
+          "genre": "news",
+          "score": 54,
+          "link": "https://www.youtube.com/watch?v=gC2UoSJtSeM"
+        },
+        {
+          "program_id": "gC2UoSJtSeM_3",
+          "start": 828,
+          "end": 1007,
+          "genre": "news",
+          "score": 31,
+          "link": "https://www.youtube.com/watch?v=gC2UoSJtSeM"
+        },
+        {
+          "program_id": "gC2UoSJtSeM_4",
+          "start": 1007,
+          "end": 1162,
+          "genre": "news",
+          "score": 52,
+          "link": "https://www.youtube.com/watch?v=gC2UoSJtSeM"
+        },
+        {
+          "program_id": "gC2UoSJtSeM_5",
+          "start": 1162,
+          "end": 1286,
+          "genre": "news",
+          "score": 90,
+          "link": "https://www.youtube.com/watch?v=gC2UoSJtSeM"
+        },
+        {
+          "program_id": "gC2UoSJtSeM_6",
+          "start": 1286,
+          "end": 1380,
+          "genre": "news",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=gC2UoSJtSeM"
+        }
+      ]
+    },
+    {
+      "channel_id": 30,
+      "channel_name": "National Geographic",
+      "programs": [
+        {
+          "program_id": "FqQJmDiW0xs_0",
+          "start": 420,
+          "end": 551,
+          "genre": "drama",
+          "score": 70,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        },
+        {
+          "program_id": "FqQJmDiW0xs_1",
+          "start": 551,
+          "end": 650,
+          "genre": "documentary",
+          "score": 54,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        },
+        {
+          "program_id": "FqQJmDiW0xs_2",
+          "start": 650,
+          "end": 761,
+          "genre": "tech",
+          "score": 58,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        },
+        {
+          "program_id": "FqQJmDiW0xs_3",
+          "start": 761,
+          "end": 851,
+          "genre": "variety",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        },
+        {
+          "program_id": "FqQJmDiW0xs_4",
+          "start": 851,
+          "end": 1006,
+          "genre": "variety",
+          "score": 74,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        },
+        {
+          "program_id": "FqQJmDiW0xs_5",
+          "start": 1006,
+          "end": 1159,
+          "genre": "variety",
+          "score": 79,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        },
+        {
+          "program_id": "FqQJmDiW0xs_6",
+          "start": 1159,
+          "end": 1314,
+          "genre": "variety",
+          "score": 83,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        },
+        {
+          "program_id": "FqQJmDiW0xs_7",
+          "start": 1314,
+          "end": 1380,
+          "genre": "talk",
+          "score": 44,
+          "link": "https://www.youtube.com/watch?v=FqQJmDiW0xs"
+        }
+      ]
+    },
+    {
+      "channel_id": 31,
+      "channel_name": "IndiaTV",
+      "programs": [
+        {
+          "program_id": "TNKbD5iYD8E_0",
+          "start": 420,
+          "end": 582,
+          "genre": "news",
+          "score": 71,
+          "link": "https://www.youtube.com/watch?v=TNKbD5iYD8E"
+        },
+        {
+          "program_id": "TNKbD5iYD8E_1",
+          "start": 582,
+          "end": 702,
+          "genre": "talk",
+          "score": 40,
+          "link": "https://www.youtube.com/watch?v=TNKbD5iYD8E"
+        },
+        {
+          "program_id": "TNKbD5iYD8E_2",
+          "start": 702,
+          "end": 859,
+          "genre": "news",
+          "score": 66,
+          "link": "https://www.youtube.com/watch?v=TNKbD5iYD8E"
+        },
+        {
+          "program_id": "TNKbD5iYD8E_3",
+          "start": 859,
+          "end": 1035,
+          "genre": "tech",
+          "score": 60,
+          "link": "https://www.youtube.com/watch?v=TNKbD5iYD8E"
+        },
+        {
+          "program_id": "TNKbD5iYD8E_4",
+          "start": 1035,
+          "end": 1170,
+          "genre": "news",
+          "score": 52,
+          "link": "https://www.youtube.com/watch?v=TNKbD5iYD8E"
+        },
+        {
+          "program_id": "TNKbD5iYD8E_5",
+          "start": 1170,
+          "end": 1304,
+          "genre": "music",
+          "score": 72,
+          "link": "https://www.youtube.com/watch?v=TNKbD5iYD8E"
+        },
+        {
+          "program_id": "TNKbD5iYD8E_6",
+          "start": 1304,
+          "end": 1380,
+          "genre": "drama",
+          "score": 90,
+          "link": "https://www.youtube.com/watch?v=TNKbD5iYD8E"
+        }
+      ]
+    },
+    {
+      "channel_id": 32,
+      "channel_name": "NDTV India",
+      "programs": [
+        {
+          "program_id": "0_UYZeusfmM_0",
+          "start": 420,
+          "end": 586,
+          "genre": "news",
+          "score": 92,
+          "link": "https://www.youtube.com/watch?v=0_UYZeusfmM"
+        },
+        {
+          "program_id": "0_UYZeusfmM_1",
+          "start": 586,
+          "end": 757,
+          "genre": "news",
+          "score": 97,
+          "link": "https://www.youtube.com/watch?v=0_UYZeusfmM"
+        },
+        {
+          "program_id": "0_UYZeusfmM_2",
+          "start": 757,
+          "end": 878,
+          "genre": "drama",
+          "score": 86,
+          "link": "https://www.youtube.com/watch?v=0_UYZeusfmM"
+        },
+        {
+          "program_id": "0_UYZeusfmM_3",
+          "start": 878,
+          "end": 1039,
+          "genre": "news",
+          "score": 85,
+          "link": "https://www.youtube.com/watch?v=0_UYZeusfmM"
+        },
+        {
+          "program_id": "0_UYZeusfmM_4",
+          "start": 1039,
+          "end": 1173,
+          "genre": "news",
+          "score": 62,
+          "link": "https://www.youtube.com/watch?v=0_UYZeusfmM"
+        },
+        {
+          "program_id": "0_UYZeusfmM_5",
+          "start": 1173,
+          "end": 1347,
+          "genre": "news",
+          "score": 89,
+          "link": "https://www.youtube.com/watch?v=0_UYZeusfmM"
+        },
+        {
+          "program_id": "0_UYZeusfmM_6",
+          "start": 1347,
+          "end": 1380,
+          "genre": "news",
+          "score": 47,
+          "link": "https://www.youtube.com/watch?v=0_UYZeusfmM"
+        }
+      ]
+    },
+    {
+      "channel_id": 33,
+      "channel_name": "News18 UP Uttarakhand",
+      "programs": [
+        {
+          "program_id": "RngnsVWicZ0_0",
+          "start": 420,
+          "end": 500,
+          "genre": "variety",
+          "score": 44,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        },
+        {
+          "program_id": "RngnsVWicZ0_1",
+          "start": 500,
+          "end": 658,
+          "genre": "variety",
+          "score": 94,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        },
+        {
+          "program_id": "RngnsVWicZ0_2",
+          "start": 658,
+          "end": 761,
+          "genre": "sports",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        },
+        {
+          "program_id": "RngnsVWicZ0_3",
+          "start": 761,
+          "end": 923,
+          "genre": "gaming",
+          "score": 99,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        },
+        {
+          "program_id": "RngnsVWicZ0_4",
+          "start": 923,
+          "end": 1055,
+          "genre": "news",
+          "score": 73,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        },
+        {
+          "program_id": "RngnsVWicZ0_5",
+          "start": 1055,
+          "end": 1153,
+          "genre": "variety",
+          "score": 81,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        },
+        {
+          "program_id": "RngnsVWicZ0_6",
+          "start": 1153,
+          "end": 1258,
+          "genre": "drama",
+          "score": 80,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        },
+        {
+          "program_id": "RngnsVWicZ0_7",
+          "start": 1258,
+          "end": 1380,
+          "genre": "music",
+          "score": 89,
+          "link": "https://www.youtube.com/watch?v=RngnsVWicZ0"
+        }
+      ]
+    },
+    {
+      "channel_id": 34,
+      "channel_name": "IndiaTV",
+      "programs": [
+        {
+          "program_id": "067Tm9GcK8E_0",
+          "start": 420,
+          "end": 591,
+          "genre": "variety",
+          "score": 63,
+          "link": "https://www.youtube.com/watch?v=067Tm9GcK8E"
+        },
+        {
+          "program_id": "067Tm9GcK8E_1",
+          "start": 591,
+          "end": 640,
+          "genre": "variety",
+          "score": 90,
+          "link": "https://www.youtube.com/watch?v=067Tm9GcK8E"
+        },
+        {
+          "program_id": "067Tm9GcK8E_2",
+          "start": 640,
+          "end": 787,
+          "genre": "variety",
+          "score": 100,
+          "link": "https://www.youtube.com/watch?v=067Tm9GcK8E"
+        },
+        {
+          "program_id": "067Tm9GcK8E_3",
+          "start": 787,
+          "end": 940,
+          "genre": "variety",
+          "score": 36,
+          "link": "https://www.youtube.com/watch?v=067Tm9GcK8E"
+        },
+        {
+          "program_id": "067Tm9GcK8E_4",
+          "start": 940,
+          "end": 1076,
+          "genre": "variety",
+          "score": 99,
+          "link": "https://www.youtube.com/watch?v=067Tm9GcK8E"
+        },
+        {
+          "program_id": "067Tm9GcK8E_5",
+          "start": 1076,
+          "end": 1205,
+          "genre": "variety",
+          "score": 48,
+          "link": "https://www.youtube.com/watch?v=067Tm9GcK8E"
+        },
+        {
+          "program_id": "067Tm9GcK8E_6",
+          "start": 1205,
+          "end": 1380,
+          "genre": "variety",
+          "score": 45,
+          "link": "https://www.youtube.com/watch?v=067Tm9GcK8E"
+        }
+      ]
+    },
+    {
+      "channel_id": 35,
+      "channel_name": "News18 MP Chhattisgarh",
+      "programs": [
+        {
+          "program_id": "RBKlKrL7lK4_0",
+          "start": 420,
+          "end": 531,
+          "genre": "variety",
+          "score": 95,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        },
+        {
+          "program_id": "RBKlKrL7lK4_1",
+          "start": 531,
+          "end": 693,
+          "genre": "variety",
+          "score": 70,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        },
+        {
+          "program_id": "RBKlKrL7lK4_2",
+          "start": 693,
+          "end": 854,
+          "genre": "sports",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        },
+        {
+          "program_id": "RBKlKrL7lK4_3",
+          "start": 854,
+          "end": 889,
+          "genre": "variety",
+          "score": 54,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        },
+        {
+          "program_id": "RBKlKrL7lK4_4",
+          "start": 889,
+          "end": 1057,
+          "genre": "drama",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        },
+        {
+          "program_id": "RBKlKrL7lK4_5",
+          "start": 1057,
+          "end": 1156,
+          "genre": "variety",
+          "score": 53,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        },
+        {
+          "program_id": "RBKlKrL7lK4_6",
+          "start": 1156,
+          "end": 1322,
+          "genre": "variety",
+          "score": 53,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        },
+        {
+          "program_id": "RBKlKrL7lK4_7",
+          "start": 1322,
+          "end": 1380,
+          "genre": "variety",
+          "score": 57,
+          "link": "https://www.youtube.com/watch?v=RBKlKrL7lK4"
+        }
+      ]
+    },
+    {
+      "channel_id": 36,
+      "channel_name": "IndiaTV",
+      "programs": [
+        {
+          "program_id": "jyciOq7Lawo_0",
+          "start": 420,
+          "end": 528,
+          "genre": "news",
+          "score": 71,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        },
+        {
+          "program_id": "jyciOq7Lawo_1",
+          "start": 528,
+          "end": 644,
+          "genre": "news",
+          "score": 54,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        },
+        {
+          "program_id": "jyciOq7Lawo_2",
+          "start": 644,
+          "end": 787,
+          "genre": "music",
+          "score": 45,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        },
+        {
+          "program_id": "jyciOq7Lawo_3",
+          "start": 787,
+          "end": 942,
+          "genre": "news",
+          "score": 32,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        },
+        {
+          "program_id": "jyciOq7Lawo_4",
+          "start": 942,
+          "end": 1048,
+          "genre": "news",
+          "score": 69,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        },
+        {
+          "program_id": "jyciOq7Lawo_5",
+          "start": 1048,
+          "end": 1118,
+          "genre": "news",
+          "score": 87,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        },
+        {
+          "program_id": "jyciOq7Lawo_6",
+          "start": 1118,
+          "end": 1262,
+          "genre": "news",
+          "score": 78,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        },
+        {
+          "program_id": "jyciOq7Lawo_7",
+          "start": 1262,
+          "end": 1380,
+          "genre": "variety",
+          "score": 74,
+          "link": "https://www.youtube.com/watch?v=jyciOq7Lawo"
+        }
+      ]
+    },
+    {
+      "channel_id": 37,
+      "channel_name": "News18 Bihar Jharkhand",
+      "programs": [
+        {
+          "program_id": "dfuE2JWEE0o_0",
+          "start": 420,
+          "end": 459,
+          "genre": "news",
+          "score": 95,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        },
+        {
+          "program_id": "dfuE2JWEE0o_1",
+          "start": 459,
+          "end": 571,
+          "genre": "news",
+          "score": 52,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        },
+        {
+          "program_id": "dfuE2JWEE0o_2",
+          "start": 571,
+          "end": 742,
+          "genre": "news",
+          "score": 74,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        },
+        {
+          "program_id": "dfuE2JWEE0o_3",
+          "start": 742,
+          "end": 918,
+          "genre": "news",
+          "score": 71,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        },
+        {
+          "program_id": "dfuE2JWEE0o_4",
+          "start": 918,
+          "end": 1003,
+          "genre": "news",
+          "score": 33,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        },
+        {
+          "program_id": "dfuE2JWEE0o_5",
+          "start": 1003,
+          "end": 1159,
+          "genre": "news",
+          "score": 100,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        },
+        {
+          "program_id": "dfuE2JWEE0o_6",
+          "start": 1159,
+          "end": 1280,
+          "genre": "news",
+          "score": 36,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        },
+        {
+          "program_id": "dfuE2JWEE0o_7",
+          "start": 1280,
+          "end": 1380,
+          "genre": "news",
+          "score": 58,
+          "link": "https://www.youtube.com/watch?v=dfuE2JWEE0o"
+        }
+      ]
+    },
+    {
+      "channel_id": 38,
+      "channel_name": "Aaj Tak",
+      "programs": [
+        {
+          "program_id": "XfqJM4tCyF4_0",
+          "start": 420,
+          "end": 523,
+          "genre": "sports",
+          "score": 42,
+          "link": "https://www.youtube.com/watch?v=XfqJM4tCyF4"
+        },
+        {
+          "program_id": "XfqJM4tCyF4_1",
+          "start": 523,
+          "end": 674,
+          "genre": "variety",
+          "score": 41,
+          "link": "https://www.youtube.com/watch?v=XfqJM4tCyF4"
+        },
+        {
+          "program_id": "XfqJM4tCyF4_2",
+          "start": 674,
+          "end": 847,
+          "genre": "variety",
+          "score": 54,
+          "link": "https://www.youtube.com/watch?v=XfqJM4tCyF4"
+        },
+        {
+          "program_id": "XfqJM4tCyF4_3",
+          "start": 847,
+          "end": 1023,
+          "genre": "variety",
+          "score": 40,
+          "link": "https://www.youtube.com/watch?v=XfqJM4tCyF4"
+        },
+        {
+          "program_id": "XfqJM4tCyF4_4",
+          "start": 1023,
+          "end": 1113,
+          "genre": "variety",
+          "score": 39,
+          "link": "https://www.youtube.com/watch?v=XfqJM4tCyF4"
+        },
+        {
+          "program_id": "XfqJM4tCyF4_5",
+          "start": 1113,
+          "end": 1258,
+          "genre": "variety",
+          "score": 62,
+          "link": "https://www.youtube.com/watch?v=XfqJM4tCyF4"
+        },
+        {
+          "program_id": "XfqJM4tCyF4_6",
+          "start": 1258,
+          "end": 1380,
+          "genre": "variety",
+          "score": 85,
+          "link": "https://www.youtube.com/watch?v=XfqJM4tCyF4"
+        }
+      ]
+    },
+    {
+      "channel_id": 39,
+      "channel_name": "Tomographic",
+      "programs": [
+        {
+          "program_id": "8HVXrRgingY_0",
+          "start": 420,
+          "end": 564,
+          "genre": "variety",
+          "score": 70,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_1",
+          "start": 564,
+          "end": 655,
+          "genre": "variety",
+          "score": 98,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_2",
+          "start": 655,
+          "end": 818,
+          "genre": "variety",
+          "score": 77,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_3",
+          "start": 818,
+          "end": 944,
+          "genre": "variety",
+          "score": 93,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_4",
+          "start": 944,
+          "end": 1089,
+          "genre": "news",
+          "score": 36,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_5",
+          "start": 1089,
+          "end": 1187,
+          "genre": "variety",
+          "score": 46,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_6",
+          "start": 1187,
+          "end": 1275,
+          "genre": "variety",
+          "score": 53,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_7",
+          "start": 1275,
+          "end": 1326,
+          "genre": "variety",
+          "score": 32,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        },
+        {
+          "program_id": "8HVXrRgingY_8",
+          "start": 1326,
+          "end": 1380,
+          "genre": "drama",
+          "score": 30,
+          "link": "https://www.youtube.com/watch?v=8HVXrRgingY"
+        }
+      ]
+    }
+  ]
+}
