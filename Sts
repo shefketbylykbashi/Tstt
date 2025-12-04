@@ -1,0 +1,205 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("=== P vs NP Demonstration ===");
+            Console.WriteLine("1) Dijkstra - Shortest Delivery Route (Prishtina)");
+            Console.WriteLine("2) 0/1 Knapsack - Student Backpack Optimization");
+            Console.WriteLine("0) Exit");
+            Console.Write("Choose an option: ");
+
+            string choice = Console.ReadLine();
+            if (choice == "1") RunDijkstra();
+            else if (choice == "2") RunKnapsack();
+            else if (choice == "0") return;
+            else
+            {
+                Console.WriteLine("Invalid choice!");
+                Console.ReadKey();
+            }
+        }
+    }
+
+    static void RunDijkstra()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Shortest Delivery Route in Prishtina ===");
+
+        Dictionary<string, List<(string, int)>> graph = new()
+        {
+            { "A", new() { ("B", 3), ("C", 7) } },
+            { "B", new() { ("A", 3), ("D", 6) } },
+            { "C", new() { ("A", 7), ("D", 5), ("I", 10) } },
+            { "D", new() { ("B", 6), ("C", 5), ("F", 4), ("G", 6) } },
+            { "F", new() { ("D", 4), ("H", 7) } },
+            { "H", new() { ("F", 7), ("G", 4), ("I", 8) } },
+            { "G", new() { ("H", 4), ("E", 8), ("D", 6) } },
+            { "E", new() { ("G", 8), ("J", 12) } },
+            { "I", new() { ("C", 10), ("J", 15), ("H", 8) } },
+            { "J", new() { ("E", 12), ("I", 15) } }
+        };
+
+        string source = "A";
+        var distances = Dijkstra(graph, source);
+
+        Console.WriteLine("\nShortest travel time from Sheshi Skënderbeu (A):\n");
+        foreach (var kvp in distances)
+            Console.WriteLine($"{source} -> {kvp.Key} = {kvp.Value} min");
+
+        Console.WriteLine("\nPress any key to return to menu...");
+        Console.ReadKey();
+    }
+
+    static Dictionary<string, int> Dijkstra(Dictionary<string, List<(string, int)>> graph, string source)
+    {
+        var dist = new Dictionary<string, int>();
+        var visited = new HashSet<string>();
+
+        foreach (var node in graph.Keys)
+            dist[node] = int.MaxValue;
+        dist[source] = 0;
+
+        var pq = new PriorityQueue<string, int>();
+        pq.Enqueue(source, 0);
+
+        while (pq.Count > 0)
+        {
+            pq.TryDequeue(out string current, out _);
+
+            if (visited.Contains(current))
+                continue;
+            visited.Add(current);
+
+            foreach (var (neighbor, weight) in graph[current])
+            {
+                int newDist = dist[current] + weight;
+                if (newDist < dist[neighbor])
+                {
+                    dist[neighbor] = newDist;
+                    pq.Enqueue(neighbor, newDist);
+                }
+            }
+        }
+
+        return dist;
+    }
+
+    static void RunKnapsack()
+    {
+        Console.Clear();
+        Console.WriteLine("=== Student Backpack Optimization (0/1 Knapsack) ===");
+
+        double capacity = 20.0;
+
+        List<Item> items = new()
+        {
+            new Item("Laptop", 2.3, 10),
+            new Item("Libër Algoritme", 1.4, 8),
+            new Item("Libër Kriptografi", 1.2, 6),
+            new Item("Libër AI", 1.8, 9),
+            new Item("Fletore", 0.6, 5),
+            new Item("Charger", 0.3, 4),
+            new Item("Kufje", 0.25, 4),
+            new Item("Ujë 0.5L", 0.5, 3),
+            new Item("Sanduic", 0.4, 5),
+            new Item("Hoodie", 1.0, 7)
+        };
+
+        int n = items.Count;
+        int maxW = (int)(capacity * 10);
+        int[,] dp = new int[n + 1, maxW + 1];
+
+        for (int i = 1; i <= n; i++)
+        {
+            int w = (int)(items[i - 1].Weight * 10);
+            for (int c = 0; c <= maxW; c++)
+            {
+                if (w > c)
+                    dp[i, c] = dp[i - 1, c];
+                else
+                    dp[i, c] = Math.Max(dp[i - 1, c],
+                        items[i - 1].Value + dp[i - 1, c - w]);
+            }
+        }
+
+        int result = dp[n, maxW];
+        Console.WriteLine($"\nMaximum Value = {result}");
+
+        List<Item> chosen = new();
+        int remaining = maxW;
+
+        for (int i = n; i >= 1; i--)
+        {
+            if (dp[i, remaining] != dp[i - 1, remaining])
+            {
+                chosen.Add(items[i - 1]);
+                remaining -= (int)(items[i - 1].Weight * 10);
+            }
+        }
+
+        Console.WriteLine("\nItems chosen:");
+        double totalWeight = 0;
+        foreach (var x in chosen)
+        {
+            totalWeight += x.Weight;
+            Console.WriteLine($"- {x.Name} ({x.Weight}kg, Value: {x.Value})");
+        }
+        Console.WriteLine($"\nTotal weight: {totalWeight} / {capacity} kg");
+
+        Console.WriteLine("\nPress any key to return to menu...");
+        Console.ReadKey();
+    }
+}
+
+class Item
+{
+    public string Name;
+    public double Weight;
+    public int Value;
+
+    public Item(string name, double weight, int value)
+    {
+        Name = name;
+        Weight = weight;
+        Value = value;
+    }
+}
+
+
+
+//P PROBLEM - DIJKSTRA
+// Problemi: Gjetja e rruges me te shkurte ne graf
+// Shembull real: Dergesa me kohen me te shpejte ne Prishtine
+// Grafi permban 10 lokacione (A–J)
+// Algoritmi perdor Priority Queue
+// Çdo hap zvogelon distancat derisa te gjenden me te mirat
+//
+// Analyze the time complexity and explain why this problem belongs to class P?
+// - Kompleksiteti: O(E log V), ku E = numri i lidhjeve, V = numri i nyjeve
+// - Rritja e kohes eshte e menaxhueshme per grafet e medha
+// - Zgjidhet shpejt edhe kur rritet inputi, prandaj klasifikohet si problem ne P
+
+// NP PROBLEM - 0/1 KNAPSACK
+// Problemi: Cilat gjera t’i marrim ne çante qe peshojne ≤ 20kg dhe japin vlere maksimale per studentin
+// 10 artikuj
+// Çdo artikull ka: Emer, Peshe, Vlere
+// Zgjidhja eshte optimale duke perdorur Dynamic Programming
+//
+// PSE KNAPSACK eSHTe NP (Me i veshtire se P)
+// Versioni i vendimit eshte NP-Complete
+// Brute Force provon te gjitha kombinimet: O(2^n)
+// Me DP zgjidhim vetem kete rast te vogel ne kohe te, por kur rritet inputi → shperthen kompleksiteti (exponential)
+
+//Provide the optimal solution with clear justification that it is indeed optimal
+//Optimal solution eshte te merret çdo artikull ne çante, sepse pesha totale 9.75kg eshte nen kufirin 20kg dhe
+//siguron vleren maksimale 61, prandaj nuk ekziston kombinim me i mire.
+
+//Analyze why this problem is computationally harder and explain its NP classification
+//Ky problem eshte me i veshtire sepse per te gjetur zgjidhjen optimale duhet te kontrollohen shume kombinime te mundshme
+//(qe rriten ne menyre eksponenciale), ndaj kerkimi eshte i veshtire por verifikimi i nje zgjidhjeje eshte i lehte, prandaj klasifikohet ne NP.
