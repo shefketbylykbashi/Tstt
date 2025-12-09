@@ -1,0 +1,54 @@
+Cka ndodh nese skanojme websites te medha psh. Google, youtube etj??
+skanimi do te ekzekutohet pa problem, pasi qe google, youtube jane te pergatitura per keto lloj nderhyrjesh nga jashte, mirepo ne do jemi visible per ta pasi qe na shfaqet ip adresa jone, mirepo keto nderhyrje per websites te medha jane si pike ne oqean, dmth nuk kane shume rendesi
+
+A mund te bejme scanning te shume targeteve dhe si?
+Po.
+Nikto mund të skanoj **shumë targete në paralel** duke përdorur një *input file* me lista të hosteve:
+nikto -h hosts.txt
+
+A mundet Nikto të dëmtojë ndonjë web server gjatë skanimit?
+Jo nikto vetem merr informacion qe gjen dhe as nuk ben nderhyrje tjera, aq me pak qe te demtoje diqka
+
+Cilat jane pasojat e skanimit te websites qe nuk jemi te autorizuar ti skanojme?
+eshte praktike e mire dhe e udhes qe te skanojme websites per testing purposes dhe mos te pengojme websites tjera gjate punes se tyre, pasojat perndryshe jane te tilla ti : ip jone mund te shihet per anen kundershtare dhe mund te na bejne ban ose te na vendosin limit
+
+A ka vulnerabilities qe jane te dobishme per hacking? Dmth. Pasi e perfundojme skanimin cilat informacione na hyn ne pune per hacking?
+ka disa qe nuk hijne direkt ne perdorim per hacking, mirepo mund te perpunohet informacioni dhe te jete i dobishem,
+psh per anticlickjacking: hackers munden me gjet website edhe me vendos clickjacking divs qe kur perdoruesit klikojne ti direktoje ne links qe mund te jene te demshme (virus etj.)
+Folders ose files nese jane accesible, hackers mund ti perdorin ato per te gjetur login panels, backup files, configuration files etj
+
+Çfarë mund te bejme me zbulimin e versioneve të softuerit të përdorur në web server? Cka na hyn ne pune kjo informate?
+zbulimi i versionit te serverit iu jep qasje direkte hackers ne dokumentimin publik te tyre, pasi qe munden lehte ta kerkojne ne google dhe te shohin gjithqka rreth versionit, bugs me e rendesishmja
+
+
+Cfare te dhena rreth SSL te nje website mundet te kap Nikto?
+Gjatë skanimit të SSL, Nikto nxjerr:
+
+* Versionet e TLS që serveri mbështet
+* Cipher suites të dobëta (p.sh. TLS 1.0, RC4, 3DES)
+* Certifikatën SSL:
+
+  * Issuer
+  * Subject
+  * Common Name (CN)
+  * Valid from / valid until
+  * Nëse certifikata ka skaduar
+
+
+Çka tregon numri i kërkesave që Nikto raporton në fund të skanimit?
+Numri i kërkesave (requests) tregon:
+
+* Sa kërkesa HTTP janë dërguar drejt serverit
+* Intensitetin e skanimit (Sa ngarkesë i është bërë serverit)
+
+gjjithashtu ngjitur tregon edhe errors dhe reported issues qe i gjen
+
+A ka ndonje mundesi qe ne te mund ta fshehim identitetin tone kur bejme scanning?
+po me opsionin -useproxy ne mund te fshehim ip adresen tone dhe mos te jemi visible per anen e kundert
+
+
+Na tregoni nje skenar nga jeta reale ku mund te hyje ne perdorim Nikto?
+ekipet per penetration testing, kur te perfundon hostimi i nje website e perdorin nikto per te shikuar gjithqka qe mund ta permiresoje web server te tyre, duke identifikuar vulnerabilities dhe duke i trajtuar ato
+
+Ne cfare files mund te fitojme casje nese e gjejme kete vulnerability ne ndonje web server?
+qdo log qe shkruan ne fund "was found" na len te kuptojme qe ka te beje me nje folder ose me nje file qe eshte accessible per ne
